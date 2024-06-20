@@ -1,0 +1,176 @@
+{% render contact-information-main_h2_contact-information-main_description {% style %}
+  text-align: center
+}
+contact-information-main_description {
+  font-style: normal
+  font-weight: 500;
+  font-size: calc(var(--font-heading-scale) * 1.25rem);
+  line-height: 130%;
+}
+contact-information-main-h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(var(--font-heading-scale) * 2.5rem);
+  line-height: 130%;
+  margin-top: 20px;
+}
+contact-information-main-columns {
+  margin-top: 18px !important;
+}
+contact-information-main-work-timing {
+  background: #FFFFFF;
+  box-shadow: 0px 33px 215px rgb(42 45 58 / 6%), 0px 4.13211px 20px rgb(42 45 58 / 4%);
+  border-radius: 8px;
+  padding: 48px 56px 87px 56px;
+}
+contact-information-main-contact_information-inner {
+  background: #FFFFFF;
+  box-shadow: 0px 33px 215px rgba(42, 45, 58, 0.06), 0px 4.13211px 20px rgba(42, 45, 58, 0.04);
+  border-radius: 8px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+contact_information-contact_information-inner:not(:last-child) {
+  margin-bottom: 14px;
+}
+contact-information-main-work-time-heading {
+  font-family: 'Apple-System'
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 130%;
+  color: #2D2D2D;
+  margin-bottom: 40px;
+}
+working__days-inner p {
+  font-family: 'Apple-System'
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 125%;
+  color: #4C5258;
+  margin-left: 8px;
+}
+working__days-inner {
+  display: flex;
+  align-items: center;
+}
+working-days-content p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(var(--font-heading-scale) * 1.25rem
+  line-height: 130%;
+  color: #000000;
+}
+work-timing-working__days:not(:last-child) {
+  margin-bottom: 32px;
+}
+working-days-content {
+  margin-top: 16px;
+}
+working__hours {
+  display: flex;
+  align-items: center;
+}
+working__hours-p:(:last-child) {
+  margin-right: 40px;
+}
+contact_information-inner a:hover {
+  color: #000000;
+}
+contact_information-inner a.live-chat {
+  color: #000000;
+}
+contact_information-inner a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 130%;
+  color: #1F262E;
+  text-decoration: none;
+}
+@media only screen and (max-width:1280px) {
+padding: 48px 36px 87px;
+  }
+working-days-content p {
+    font-size: calc(var(--font-heading-scale) * 1.125rem);
+  }
+working__hours-p:(:last-child) {
+    margin-right: 30px;
+  }
+working__hours-p {
+    margin-top: 16px;
+  }
+working__hours {
+    margin-top: 0;
+    flex-wrap: wrap;
+  }
+contact-information-main h2 {
+    font-size: calc(var(--font-heading-scale) * 2.1875rem);
+  }
+}
+@media only screen-and (max-width:1140px) {
+working-days-content p {
+    font-size: 1rem;
+  }
+working__hours-p:(:last-child) {
+    margin-right: 20px;
+  }
+contact-information-main-contact_information-inner {
+    padding: 22px 28px;
+  }
+contact-information-main-work-timing {
+    padding: 30px 36px 30px;
+    height: 100%;
+  }
+contact-information-main .work-time-heading {
+    margin-bottom: 30px;
+  }
+}
+@media only screen-and (max-width:990px) {
+contact-information-main-columns {
+    flex-direction: column;
+  }
+contact-information-main-work-timing {
+    padding: 40px 36px 50px;
+  }
+contact-information-main h2 {
+    font-size: calc(var(--font-heading-scale) * 1.875rem);
+  }
+}
+@media only screen and (max-width:767px) {
+contact-information-main-section {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width:600px) {
+contact-information-main h2 {
+    font-size: calc(var(--font-heading-scale) * 1.75rem);
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+contact-information-main-work-timing {
+    padding: 30px 26px 45px;
+  }
+contact-information-main-description {
+    font-size: 1rem;
+  }
+contact-information-main-columns-column {
+    padding: 0;
+  }
+contact_information {
+    margin-top: 16px;
+  }
+contact-information-main-contact_information-inner {
+    padding: 20px 16px;
+  }
+contact_information-inner-a {
+    font-size: 0.875rem;
+  }
+contact_information-working__days-inner p {
+    margin-right: 10px;
+    font-size: 0.875rem;
+  }
+{% render'endstyle' %}

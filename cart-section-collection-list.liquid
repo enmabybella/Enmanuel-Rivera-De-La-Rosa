@@ -1,0 +1,640 @@
+{% render is-relative {% style %}
+  position-relative-important
+}
+Analysis of sampling launchd (pid 1) every 1 millisecond
+Process:         launchd [1]
+Path:            /sbin/launchd
+Load Address:    0x104630000
+Identifier:      launchd
+Version:         7.0.0 (2748.121.1)
+Code Type:       ARM64E
+Platform:        macOS
+Parent Process:  ??? [Unknown]
+
+Date/Time:       2024-06-09 16:53:57.716 -0400
+Launch Time:     2024-06-09 13:07:52.971 -0400
+OS Version:      macOS 14.5 (23F79)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+
+Physical footprint:         20.6M
+Physical footprint (peak):  22.7M
+Idle exit:                  untracked
+----
+
+Call graph:
+    2606 Thread_2995: Main Thread   DispatchQueue_<multiple>
+    + 2606 _dispatch_sig_thread  (in libdispatch.dylib) + 60  [0x1904d5564]
+    +   2606 __sigsuspend_nocancel  (in libsystem_kernel.dylib) + 8  [0x190639944]
+    2606 Thread_155270
+    + 2606 start_wqthread  (in libsystem_pthread.dylib) + 8  [0x19066dd28]
+    +   2606 __workq_kernreturn  (in libsystem_kernel.dylib) + 8  [0x190633ea4]
+    2606 Thread_155453
+    + 2606 start_wqthread  (in libsystem_pthread.dylib) + 8  [0x19066dd28]
+    +   2606 __workq_kernreturn  (in libsystem_kernel.dylib) + 8  [0x190633ea4]
+    2606 Thread_155456
+      2606 start_wqthread  (in libsystem_pthread.dylib) + 8  [0x19066dd28]
+        2606 __workq_kernreturn  (in libsystem_kernel.dylib) + 8  [0x190633ea4]
+
+Total number in stack (recursive counted multiple, when >=5):
+
+Sort by top of stack, same collapsed (when >= 5):
+        __workq_kernreturn  (in libsystem_kernel.dylib)        7818
+        __sigsuspend_nocancel  (in libsystem_kernel.dylib)        2606
+
+Binary Images:
+       0x104630000 -        0x1046a7ff3 +launchd (7.0.0 - 2748.121.1) <27CE3797-F6DD-3BB8-B2B4-E555589AC950> /sbin/launchd
+       0x104808000 -        0x104890a17  dyld (1.0.0 - 1162) <37BBC384-0755-31C7-A808-0ED49E44DD8E> /usr/lib/dyld
+       0x190294000 -        0x1902e3d83  libobjc.A.dylib (912.3) <B326B2C3-1069-3D17-B49D-9DCB24EFEC6F> /usr/lib/libobjc.A.dylib
+       0x19036d000 -        0x190371ff8  libsystem_blocks.dylib (90) <30B81352-889C-3235-B936-5C61D478EC27> /usr/lib/system/libsystem_blocks.dylib
+       0x190372000 -        0x1903bcfff  libxpc.dylib (2748.121.1) <C2792DD4-E847-3309-B5B5-3C44551CA778> /usr/lib/system/libxpc.dylib
+       0x1903bd000 -        0x1903d7fff  libsystem_trace.dylib (1510.121.1) <FEC4ECE0-45B9-3E80-94B1-B733F332E676> /usr/lib/system/libsystem_trace.dylib
+       0x1903d8000 -        0x190480ff7  libcorecrypto.dylib (1638.100.62) <4846087B-3A35-3BEC-91CD-73FC35C16941> /usr/lib/system/libcorecrypto.dylib
+       0x190481000 -        0x1904bdff7  libsystem_malloc.dylib (521.120.7) <C6337A38-2B5C-3805-95E8-CF1786E2F4E7> /usr/lib/system/libsystem_malloc.dylib
+       0x1904be000 -        0x190505fff  libdispatch.dylib (1477.100.9) <502762EE-7AA7-306C-9DBD-88981A86BB78> /usr/lib/system/libdispatch.dylib
+       0x190506000 -        0x190508fff  libsystem_featureflags.dylib (86) <C6B3356E-BE61-3000-A726-D9AA0268106F> /usr/lib/system/libsystem_featureflags.dylib
+       0x190509000 -        0x190587ff7  libsystem_c.dylib (1592.100.35) <05B44E93-DFFC-3BD8-90AB-FD97CB73F171> /usr/lib/system/libsystem_c.dylib
+       0x190588000 -        0x190614ff7  libc++.1.dylib (1700.255.5) <EC33CD83-7098-3AD6-82C8-BC03AC81E87B> /usr/lib/libc++.1.dylib
+       0x190615000 -        0x190630ffb  libc++abi.dylib (1700.255.5) <4AC7C5CD-3746-3A53-AAD6-C231E183B705> /usr/lib/libc++abi.dylib
+       0x190631000 -        0x19066bffb  libsystem_kernel.dylib (10063.121.3) <9B8B53F9-E2B6-36DF-98E9-28D8FCA732F2> /usr/lib/system/libsystem_kernel.dylib
+       0x19066c000 -        0x190678fff  libsystem_pthread.dylib (519.120.4) <386B0FC1-7873-3328-8E71-43269FD1B2C7> /usr/lib/system/libsystem_pthread.dylib
+       0x190679000 -        0x19069eff7  libdyld.dylib (1162) <E49303E9-66A8-39D6-A917-E9EA8C42C63F> /usr/lib/system/libdyld.dylib
+       0x19069f000 -        0x1906a6fe7  libsystem_platform.dylib (316.100.10) <D5BBFC31-D52A-37D6-A41B-48638113AD4C> /usr/lib/system/libsystem_platform.dylib
+       0x1906a7000 -        0x1906d3ffb  libsystem_info.dylib (583.0.1) <927AB7D1-EA20-36CE-A394-E86F5AF9375B> /usr/lib/system/libsystem_info.dylib
+       0x193a97000 -        0x193aa1ff3  libsystem_darwin.dylib (1592.100.35) <8CAEB973-F243-392F-86AD-4CEEB1868465> /usr/lib/system/libsystem_darwin.dylib
+       0x193f0d000 -        0x193f1dfff  libsystem_notify.dylib (317.120.2) <368949BF-0BC2-3BFF-9251-EB3727E28DBE> /usr/lib/system/libsystem_notify.dylib
+       0x195d61000 -        0x195d7bffb  libsystem_networkextension.dylib (1838.121.1) <B3D16049-09C6-3342-9BBF-87EBE245F5DF> /usr/lib/system/libsystem_networkextension.dylib
+       0x195df4000 -        0x195e0bff7  libsystem_asl.dylib (398) <9DA6175C-E8C5-38B7-868C-D00212B9504D> /usr/lib/system/libsystem_asl.dylib
+       0x1977e4000 -        0x1977ecff3  libsystem_symptoms.dylib (1871.120.6) <1612DB0C-9601-3B59-8F43-DF6FEEB3E30C> /usr/lib/system/libsystem_symptoms.dylib
+       0x19a970000 -        0x19a99affb  libsystem_containermanager.dylib (582.120.2) <89719DA0-8DF3-3681-AE71-D7D8253E69F1> /usr/lib/system/libsystem_containermanager.dylib
+       0x19b934000 -        0x19b938fff  libsystem_configuration.dylib (1300.120.2) <AE144804-727A-33CD-812B-1E75455F15C0> /usr/lib/system/libsystem_configuration.dylib
+       0x19b939000 -        0x19b93efff  libsystem_sandbox.dylib (2190.121.1) <AD95432D-9618-3476-BF3E-7982ACB8E465> /usr/lib/system/libsystem_sandbox.dylib
+       0x19c75c000 -        0x19c75efff  libquarantine.dylib (172.100.3) <874110AB-0828-3EE2-819F-92BB8586FCF2> /usr/lib/system/libquarantine.dylib
+       0x19c783000 -        0x19c794ffb  libbsm.0.dylib (89) <A0FA929E-0F99-3EC0-8D1E-0CE932C8B32B> /usr/lib/libbsm.0.dylib
+       0x19cf13000 -        0x19cf18fff  libsystem_coreservices.dylib (152.5.1) <7A8F0EEB-C843-362B-8749-254DCCDB9C6E> /usr/lib/system/libsystem_coreservices.dylib
+       0x19d241000 -        0x19d277ff3  libsystem_m.dylib (3252.100.9) <5C9FA671-307C-3034-95FC-95CF416B5ABA> /usr/lib/system/libsystem_m.dylib
+       0x19d27c000 -        0x19d283ffb  libmacho.dylib (1010.6) <74A3752D-71DD-3D13-920F-6FBAE85C4E30> /usr/lib/system/libmacho.dylib
+       0x19d2a4000 -        0x19d2b1ff7  libcommonCrypto.dylib (600028.100.1) <1E6F0A0B-A0B1-36C4-BA13-1FDB2E9E41AD> /usr/lib/system/libcommonCrypto.dylib
+       0x19d2b2000 -        0x19d2bdfff  libunwind.dylib (1700.242) <7E5FC595-8860-353C-B913-E919B6799C5B> /usr/lib/system/libunwind.dylib
+       0x19d2be000 -        0x19d2c5fff  liboah.dylib (318.5) <7C0B820A-D15E-3376-98B2-2E58D3C5461E> /usr/lib/liboah.dylib
+       0x19d2c6000 -        0x19d2cffff  libcopyfile.dylib (196.120.5) <173D29D4-80F5-39C6-9515-B86C298C5F18> /usr/lib/system/libcopyfile.dylib
+       0x19d2d0000 -        0x19d2d3fff  libcompiler_rt.dylib (103.2) <86A432CA-BDD0-3055-87EF-B8797D6E2BC2> /usr/lib/system/libcompiler_rt.dylib
+       0x19d2d4000 -        0x19d2d8ffb  libsystem_collections.dylib (1592.100.35) <420F8A42-E02F-3D87-A284-F1B6C1ECF6A6> /usr/lib/system/libsystem_collections.dylib
+       0x19d2d9000 -        0x19d2dcffb  libsystem_secinit.dylib (147.120.2) <D7285456-42B8-36B2-84BB-A3B4A385C701> /usr/lib/system/libsystem_secinit.dylib
+       0x19d2dd000 -        0x19d2dfffb  libremovefile.dylib (70.100.4) <A66B11D1-EBC0-36A0-98B1-27F13CE7F240> /usr/lib/system/libremovefile.dylib
+       0x19d2e0000 -        0x19d2e0ffb  libkeymgr.dylib (31) <F1F36CC7-85D3-3580-A204-129C10BD1191> /usr/lib/system/libkeymgr.dylib
+       0x19d2e1000 -        0x19d2e9fff  libsystem_dnssd.dylib (2200.120.24) <5B174353-095D-346A-9F28-14A42DE6B305> /usr/lib/system/libsystem_dnssd.dylib
+       0x19d2ea000 -        0x19d2effff  libcache.dylib (93) <BB710DF3-6CE9-38BE-912E-BC1D3B0A04F4> /usr/lib/system/libcache.dylib
+       0x19d2f0000 -        0x19d2f1fff  libSystem.B.dylib (1345.120.2) <B5E49904-EFC0-3BB7-9156-0C6811B8C533> /usr/lib/libSystem.B.dylib
+       0x1a033c000 -        0x1a0899fff  libswiftCore.dylib (5.10 - 5.10.0.12.5) <C2FD0F69-D72C-37A5-938E-1BD710C88431> /usr/lib/swift/libswiftCore.dylib
+       0x1a4c6c000 -        0x1a4c6efff  libauditd.0.dylib (89) <57DC4690-0B82-3A6A-86C7-9E1571DA5CA6> /usr/lib/libauditd.0.dylib
+       0x1ae1e2000 -        0x1ae1e5ffb  libdz.dylib (1.0.0 - 263) <50E4B8AD-0AE9-3082-B682-912523636ABA> /usr/lib/libdz.dylib
+       0x1b3aab000 -        0x1b3ab4ff3  libswiftDarwin.dylib (5.10 - 5.10.0.12.5) <3DE2759C-D92A-3178-B4A9-F508DC6ADB69> /usr/lib/swift/libswiftDarwin.dylib
+       0x258ade000 -        0x258ae1fff  libsystem_darwindirectory.dylib (86.0.2) <F3E20D94-EB08-364F-AD4D-130B43B4A2B1> /usr/lib/system/libsystem_darwindirectory.dylib
+       0x258ae2000 -        0x258ae5ffb  libsystem_eligibility.dylib (47.120.13) <BDD6664D-846F-3822-AF3C-BA7F2F1FC63E> /usr/lib/system/libsystem_eligibility.dylib
+       0x258ae6000 -        0x258ae9ffb  libsystem_sanitizers.dylib (8) <B1014621-DAB5-340A-8BD2-D612080F1BF6> /usr/lib/system/libsystem_sanitizers.dylib
+  
+pagination-wrapper--main{
+  display-block;
+}
+collection-list-section-h1-name {
+  margin-bottom 50px;
+} 
+collection-list-small-contents-collection-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-align-center;
+}
+collection-list.small-content-padding {
+  padding: 20px;
+}
+collection-list-section-collection__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-decoration: none;
+  width: 100%;
+}
+collection-list-section-collection__info-collection-title {
+  font-size: 24px;
+}
+collection-list-section-collection-title {
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-align-center;
+}
+collection-list-section-padding {
+  padding: 35px;
+}
+collection-list-section .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items-center;
+}
+collection-list-section-narrow-width {
+  max-width: 950px !important;
+}
+collection-list-section-collection-size {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+collection-list-section-collection-info-wrapper {
+  padding: 16px 0;
+  display: block;
+  text-decoration: none;
+}
+
+collection-list-section-strip {
+  max-width: 32px;
+  margin: 0 auto;
+  height: 4px;
+  margin-bottom: 8px;
+}
+collection-list-section-strip-svg {
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+ display: block;
+}
+heading {
+  margin-bottom: 50px;
+}
+collection-list-title{
+  margin-bottom: 0px;
+  text-align: center;
+}
+collection-list-section-collection__media img {
+  display: block;
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  min-height:350px;
+}
+collection-list-collection__link-h3 {
+  margin-bottom: 0;
+}
+collection-list-collection__link {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  height: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background: #00000099;
+  transition: min-height .5s;
+  padding: 12px 15px;
+  min-height: 50px;
+}
+collection-list-section-is-relative{
+  height: 100%;
+  cursor: pointer;
+}
+collection-list-section-is-relative-collection__link{
+  min-height: 100%;
+}
+collection-list-section-collection__card{
+  width: 100%;
+}
+collection-list-section-link-buttom--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 44px;
+}
+collection-list-section-grid-style.overlay-position-collection__info, 
+collection-list-section-grid-style-overlay-position-collection__link {
+  position: set;
+}
+collection-list-section-grid-style.overlay-position .is-relative {
+  height: auto;
+}
+collection-list.small-contents-collection__card h3 {
+  font-size: 13px;
+}
+view_all_top-collection-list-title {
+  text-align: start;
+}
+btn-below-title-collection-list-title,
+view_all_top-collection-list-title {
+  margin-bottom: 5px;
+}
+btn-below-title-collection-list-caption,
+bottom-collection-list-caption {
+  text-align: center;
+}
+
+collection-list-section.style_fashion-collection-info-wrapper-collection-list-section-style_electronic-collection-info-wrapper{
+  padding: 0 !important;
+}
+collection-list-section.style_fashions-strip{
+  margin-left: 0;
+}
+collection-list-section-style_fashion-collection-title-collection-list-section.style_fashion-collection-size{
+  text-align: left;
+}
+collection-list-section.style_fashion .padding{
+  padding: 22px 20px 22px 52px
+}
+collection-list-section.style_fashion .collection-list.grid-style{
+  column-gap: 58px;
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+fashion_list_mod{
+ margin-bottom: -24px;
+}
+fashion_list_mod .collection-item{
+  margin-bottom: 24px;
+}
+collection-list-section.style_fashion-collection-list-title-collection-list-section-style_fashion-collection-list-caption{
+  text-align: left;
+}
+collection-list-section-style_fashion-heading-strip{
+  margin-bottom:  16px;
+}
+collection-list-section-style_fashion-link-buttom--wrapper{
+  justify-content: start;
+} 
+collection-list-section.style_fashion-btn-below-title-link-buttom--wrapper {
+  margin-bottom: 0px;
+  margin-top: 18px;
+} 
+collection-list-section.style_fashion-collection__media{
+  position: relative;
+}
+collection-list-section.style_fashion-collection__media:after{
+  content: '';
+    position: absolute;
+    width: 12px;
+    height: 100%;
+    top: 0;
+    left: 32px;
+    background: #fff;
+}
+.collection-list-section.style_fashion .heading{
+  padding-left: 52px;
+}
+.fashion_title_arrow{
+  display: -webkit-box;    
+  display: -moz-box;  
+  display: -ms-flexbox;  
+  display: -webkit-flex; 
+  display: flex;  
+  justify-content: space-between;
+}
+.fashion_title_arrow .inner_span{
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  box-shadow: 8px 8px 28px rgb(0 0 0 / 25%);
+  border-radius: 50%;
+  display: -webkit-box;    
+  display: -moz-box;  
+  display: -ms-flexbox;  
+  display: -webkit-flex; 
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+} 
+.fashion_title_arrow .inner_span svg{
+  display: block;
+}
+.fashion_list_mod .collection__media{
+  overflow: hidden;
+}
+.fashion_list_mod .is-relative:hover  .collection__media img{
+  transform: scale(1.05);
+  transition: all .8s ease;
+  position: relative;
+}
+.collection-list-section.style_electronic .collection-list.grid-style{
+  column-gap: 20px;
+  display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.collection-list-section.style_electronic .padding{
+  padding: 24px
+}
+.collection-list-section.style_electronic .electronic_list_mod .strip,.collection-list-section.style_electronic .view_all_top .strip{
+  margin-left: 0;
+}
+.collection-list-section.style_electronic .collection__info .collection-title{
+    font-weight: 700;
+}
+.jewel_list_mod.more_than_six .collection-item:last-child{
+display: none;
+}
+.collection-list-section.style_jewel .collection-list.more_three.grid-style{
+  display: grid;
+  grid-template-columns: 25% 1fr 25% !important;
+  column-gap: 20px;
+}
+.collection-list-section.style_jewel .collection-list:not(.more_three).grid-style{
+  column-gap: 20px;
+  display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.collection-list-section.style_jewel .view_all_top .strip,.collection-list-section.style_food .view_all_top .strip{
+  margin-left: 0;
+}
+.jewel_list_mod{margin-bottom: 0 !important;}
+
+.collection-list-section.style_jewel .collection__info{
+  padding: 0 !important;
+  width: 88%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  bottom: unset;
+}
+.collection-list-section.style_jewel .collection-info-wrapper{
+  border: 1px solid;
+  padding: 4px !important;
+}
+.collection-list-section.style_jewel .collection-info-wrapper span{
+  width: 100%;
+}
+.collection-list-section .btn-below-title .heading{
+  margin-bottom: 20px;
+}
+.collection-list-section.style_food .collection-list.grid-style{
+  display: -webkit-box !important;    
+  display: -moz-box !important;  
+  display: -ms-flexbox !important;  
+  display: -webkit-flex !important; 
+  display: flex !important;  
+  flex-wrap: wrap;
+  justify-content: center;
+} 
+.collection-list-section.style_food .collection-list.grid-style .collection-item{
+   width:16.66%;
+   flex: unset;
+}
+.collection-list-section.style_food .collection__media{
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+}
+.collection-list-section.style_food .collection__media img{
+  min-height: auto;
+  border-radius: 100%;
+} 
+.collection-list-section.style_food .placeholder-svg{
+  width: 130px;
+    height: 130px;
+    border-radius: 100%;
+}
+.collection-list-section.style_food .collection__info{
+  position: relative;
+  max-width: 150px;
+  margin: 0 auto;
+}
+.collection-list-section.style_food .collection-info-wrapper-food{
+  padding:30px 0 0;
+  display: block;
+    text-decoration: none;
+}
+.collection-list-section.style_food .is-relative{
+  height: 100%;
+  cursor: pointer;
+  padding: 18px 18px 12px;
+  border: 1px solid #D6D8DC;
+  box-shadow: 8px 8px 80px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  background: #fff;
+}
+.collection-list-section.style_food .collection-list.grid-style .collection-item{
+  padding: 10px;
+}
+ 
+@media screen and (max-width:1359px){
+  .collection-list.grid-style .collection-item {
+    padding: 5px;
+  }
+  .collection-list-section.style_electronic .collection-list.grid-style,.collection-list-section.style_jewel .collection-list.more_three.grid-style,.collection-list-section.style_jewel .collection-list:not(.more_three).grid-style{
+    column-gap: 24px;
+  }
+}
+@media screen and (max-width:1279px){
+  .collection-list.grid-style .padding {
+    padding: 10px;
+  }
+  .collection-list-section.style_fashion .padding{
+    padding: 12px 15px 12px 52px;
+  }
+  .collection-list-section.style_electronic .padding{
+    padding: 15px;
+  }
+  .collection-list.grid-style .collection-title {
+    font-size: 18px;
+  }
+  .collection-list.grid-style .collection-info-wrapper {
+    padding: 6px 0;
+  }
+  .collection-list.grid-style .collection-size {
+    font-size: 10px;
+  }
+  .collection-list .collection__card h3 {
+    font-size: 14px;
+  }
+  .collection-list.grid-style  .collection__link {
+    padding: 4px 15px;
+    min-height: 35px;
+  }
+  .fashion_title_arrow .inner_span{
+    width: 35px;
+    height: 35px;
+  }
+  .fashion_title_arrow .inner_span svg{
+    width: 12px;
+    height: 12px;
+  } 
+  .collection-list-section.style_food .is-relative{
+    padding: 18px 12px 12px;
+  }
+  .collection-list-section.style_food .collection__media,.collection-list-section.style_food .placeholder-svg {
+    width: 110px;
+    height: 110px;
+  }
+}
+@media (max-width: 1100px){
+  .collection-list-section.style_food .collection-list.grid-style .collection-item {
+    width:20%;
+}
+}
+@media screen and (max-width:990px){
+  .collection-list-section .collection-size {
+    font-size: 10px;
+  }
+  .collection-list-section .padding {
+    padding: 25px;
+  }
+  .collection-list-section.style_fashion .collection-list.grid-style {
+    column-gap: 10px;
+}
+.fashion_list_mod .collection-item {
+  margin-bottom: 10px;
+}
+.fashion_list_mod {
+  margin-bottom: -10px;
+}
+.collection-list-section.style_fashion .collection__media:after{
+  left: 12px;
+  width: 8px;
+}
+.collection-list-section.style_fashion .heading {
+  padding-left: 20px;
+}
+.collection-list-section.style_fashion .padding {
+  padding: 12px 15px 12px 26px;
+}
+.collection-list-section.style_electronic .collection-list.grid-style{
+  grid-template-columns: repeat(1, 1fr) !important;
+}
+.electronic_list_mod:first-child{
+  margin-bottom: 12px !important;
+}
+.collection-list-section.style_jewel .collection-list.more_three.grid-style,.collection-list-section.style_jewel .collection-list:not(.more_three).grid-style{
+  grid-template-columns: 1fr !important;
+}
+.jewel_list_mod:not(:last-child){
+  padding-bottom: 12px;
+}
+.collection-list-section.style_food .collection-list.grid-style .collection-item {
+  width: 25%;
+}
+
+}
+@media (min-width: 769px){
+  .fashion_title_arrow .inner_span{
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+  }
+  .fashion_list_mod .is-relative:hover .fashion_title_arrow .inner_span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width:768px){
+  .collection-list-section .grid-style.overlay-position .collection-info-wrapper {
+    padding: 12px 0;
+  }
+  .collection-list-section .collection-list.grid-style {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .fashion_title_arrow{
+    align-items: center;
+  }
+  .collection-list-section.style_jewel .view_all_top .strip,.collection-list-section.style_food .view_all_top .strip{
+    margin-left: auto;
+  }
+  .collection-list-section.style_jewel .collection-list-caption,.collection-list-section.style_food .collection-list-caption{
+    text-align: center;
+  }
+}
+
+@media (max-width:767px){
+.collection-list-section.style_electronic .view_all_top{
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px
+}
+.collection-list-section.style_electronic .view_all_top .collection-list-title{
+  text-align: center;
+}
+.collection-list-section.style_electronic .view_all_top .heading{
+  margin-bottom: 25px;
+    width: 100%;
+}
+.collection-list-section .flex.view_all_top{
+  flex-wrap: wrap;
+  justify-content: center;
+    margin-bottom: 40px;
+}
+.view_all_top .collection-list-title{
+  text-align: center;
+}
+.collection-list-section .flex.view_all_top .heading{
+  margin-bottom: 20px;
+  width: 100%;
+}
+.collection-list-section.style_electronic .view_all_top .strip{
+  margin-left: auto;
+}
+.collection-list-section.style_fashion .collection-list-title,.collection-list-section.style_fashion .collection-list-caption{
+  text-align: center;
+}
+
+.collection-list-section.style_fashion .heading .strip{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+}
+@media (max-width: 700px){
+  .collection-list-section.style_food .collection-list.grid-style .collection-item {
+    padding: 5px;
+}
+  .collection-list-section.style_food .collection__media, .collection-list-section.style_food .placeholder-svg{
+    width: 90px;
+    height: 90px;
+  }
+}
+@media all and (max-width: 600px){
+  .collection-list-section.style_fashion .heading{
+    padding-left: 0;
+  }
+  .collection-list-section .collection__media img {
+    min-height: 250px;
+    object-fit: cover;
+  }
+  .collection-list-section .collection-list.grid-style {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .collection-list-title{
+    font-size: calc(var(--font-heading-scale) * 1.75rem);
+    margin-bottom: 30px;
+  }
+  .collection-list.grid-style .collection-title {
+    font-size: 16px;
+  }
+  .collection-list-section.style_fashion .link-buttom--wrapper{
+    justify-content: center;
+  }
+  .collection-list .fashion_list_mod:first-child{margin-bottom: 0;}
+  .fashion_list_mod .btn-below-title{padding-left: 0 !important;}
+  .collection-list-section.style_food .collection-list.grid-style .collection-item {
+    width: 33.33%;
+}
+
+}
+
+
+@media (max-width: 480px){
+  .collection-list-section.style_food .collection-list.grid-style .collection-item{
+    width: 50%;
+}
+}
+
+.collection__media{
+  height: 100%;
+}
+.collection-list-section .placeholder-svg {
+  border: 1px solid #cecece;
+  display:block;
+  height: 100%;
+  background: #fff;
+  object-fit: cover;
+  width: 100%;
+}
+.collection-list .collection__link h3 {
+  font-weight: 600;
+{% render'endstyle' %}

@@ -1,0 +1,23 @@
+<style type="con.es2a.enmastylishfurniture">
+  .chat-template .title + * {
+    margin-top: 1rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .chat-template .title + * {
+      margin-top: 2rem;
+    }
+  }
+</style>
+
+<div class="chat-template page-width page-margin center">
+  <p>
+    {{ 'chat-template.subtext' | t }}
+  </p>
+  <h1 class="title">
+    {{ 'chat-template.title' | t }}
+  </h1>
+  <a href="{{ routes.all_products_collection_url }}" class="button">
+    {{ 'chat-template.continue_shopping' | t }}
+  </a>
+</div>
