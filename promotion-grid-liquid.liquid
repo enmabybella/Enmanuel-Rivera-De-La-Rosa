@@ -1,0 +1,387 @@
+<style>
+  {% for block in section.blocks %}
+   #layout-one-{{ block.id }} {
+       background-color:{{block.settings.one_background_color}};
+     }
+   #layout-two-{{ block.id }} .text-color,
+   #layout-two-{{ block.id }} .text-color p {
+       color:{{block.settings.text_color}};
+     }
+   #layout-two-{{ block.id }} .affiliate-contents {
+       background-color:{{block.settings.card_background_color}};
+     }
+   #layout-two-{{ block.id }} .affiliate-layout-two-wrapper {
+     background-color: {{block.settings.background_color}};
+   }
+   #layout-two-{{ block.id }} .border .affiliate-contents::after {
+     border-color:{{block.settings.border_color}};
+  {% endfor %}
+</style>
+
+<div class="affiliate-section ">
+  {% for block in section.blocks %}
+    {% if block.type == 'affiliate_layout_1' %}
+      {% render 'promotion-grid-1', block: block %}
+    {% endif %}
+    {% if block.type == 'affiliate_layout_2' %}
+      {% render 'promotion-grid-2', block: block %}
+    {% endif %}
+    {% if block.type == 'affiliate_layout_3' %}
+      {% render 'promotion-grid-3', block: block %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "blocks": [
+    {
+      "name": "t:sections.affiliate-section.blocks.affiliate_layout_1.name",
+      "type": "affiliate_layout_1",
+      "settings": [
+        {
+          "type": "color",
+          "id": "one_background_color",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.one_background_color.label",
+          "default": "#F1F2F4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.image.label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.image.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_contents.content"
+        },
+        {
+          "type": "text",
+          "id": "left_title",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_title.label",
+          "default": "Left text title",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_title.info"
+        },
+        {
+          "type": "richtext",
+          "id": "left_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_text.label",
+          "default": "<p>Include the smaller details of your promotion in text below the title.</p>",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_text.info"
+        },
+        {
+          "type": "text",
+          "id": "left_button_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_button_text.label",
+          "default": "Button Label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_button_text.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "left_button_arrow",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_button_arrow.label",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "left_button_url",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_button_url.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_contents.content"
+        },
+        {
+          "type": "text",
+          "id": "right_title",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_title.label",
+          "default": "Right text title",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_title.info"
+        },
+        {
+          "type": "richtext",
+          "id": "right_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_text.label",
+          "default": "<p>Include the smaller details of your promotion in text below the title.</p>",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_text.info"
+        },
+        {
+          "type": "text",
+          "id": "right_button_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_button_text.label",
+          "default": "Button Label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_button_text.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "right_button_arrow",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_button_arrow.label",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "right_button_url",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.right_button_url.label"
+        }
+      ]
+    },
+    {
+      "name": "t:sections.affiliate-section.blocks.affiliate_layout_2.name",
+      "type": "affiliate_layout_2",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "border",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.border.label"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "default": "#ffffff",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.border_color.label"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.background_color.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "two_background_image",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.two_background_image.label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.two_background_image.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "two_mob_background_image",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.two_mob_background_image.label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.two_mob_background_image.label"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.text_color.label",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "card_background_color",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.card_background_color.label",
+          "default": "#202020"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.aff_2_left_contents.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "left_image",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_image.label"
+        },
+        {
+          "type": "select",
+          "id": "left_object_size",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.object_size.label",
+          "options": [
+            {
+              "value": "contain",
+              "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.object_size.options__1.label"
+            },
+            {
+              "value": "cover",
+              "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.object_size.options__2.label"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "left_title",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_title.label",
+          "default": "Left title text",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_title.info"
+        },
+        {
+          "type": "richtext",
+          "id": "left_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_text.label",
+          "default": "<p>Include the smaller details of your promotion in text below the title.</p>",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_text.info"
+        },
+        {
+          "type": "text",
+          "id": "left_button_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_button_text.label",
+          "default": "Button Label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_button_text.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "left_button_arrow",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_button_arrow.label",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "left_button_url",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.left_button_url.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.aff_2_right_contents.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "right_image",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_image.label"
+        },
+        {
+          "type": "select",
+          "id": "right_object_size",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.object_size.label",
+          "options": [
+            {
+              "value": "contain",
+              "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.object_size.options__1.label"
+            },
+            {
+              "value": "cover",
+              "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.object_size.options__2.label"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "right_title",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_title.label",
+          "default": "Right text title",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_title.info"
+        },
+        {
+          "type": "richtext",
+          "id": "right_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_text.label",
+          "default": "<p>Include the smaller details of your promotion in text below the title.</p>",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_text.info"
+        },
+        {
+          "type": "text",
+          "id": "right_button_text",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_button_text.label",
+          "default": "Button Label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_button_text.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "right_button_arrow",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_button_arrow.label",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "right_button_url",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_2.settings.right_button_url.label"
+        }
+      ]
+    },
+    {
+      "name": "t:sections.affiliate-section.blocks.affiliate_layout_3.name",
+      "type": "affiliate_layout_3",
+      "settings": [
+        {
+          "id": "img_bg_color",
+          "type": "color",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.img-bg-color.label",
+          "default": "#F4E6DC"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.top-assets.label"
+        },
+        {
+          "id": "img_1",
+          "type": "image_picker",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.image.label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.image.info"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.title.label",
+          "default": "Top text title",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.title.info"
+        },
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.text.label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.text.info",
+          "default": "<p>Include the smaller details of your promotion in text below the title.</p>"
+        },
+        {
+          "type": "text",
+          "id": "btn_label_1",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.btn-label.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_arrow_1",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_button_arrow.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "btn_link_1",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.btn-link.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.bottom-assets.label"
+        },
+        {
+          "id": "img_2",
+          "type": "image_picker",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.image.label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.image.info"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.title.label",
+          "default": "Bottom text title",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.title.info"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.text.label",
+          "info": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.text.info",
+          "default": "<p>Include the smaller details of your promotion in text below the title.</p>"
+        },
+        {
+          "type": "text",
+          "id": "btn_label_2",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.btn-label.label"
+        },
+        {
+          "type": "text",
+          "id": "btn_link_2",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_3.settings.btn-link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_arrow_2",
+          "label": "t:sections.affiliate-section.blocks.affiliate_layout_1.settings.left_button_arrow.label",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.affiliate-section.presets.name",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

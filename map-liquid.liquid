@@ -1,0 +1,140 @@
+{{ 'map.css' | asset_url | stylesheet_tag }}
+<div class="map__{{ section.id }}">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'map_iframe' -%}
+        <div class="map__google-iframe">
+          {{ block.settings.googlemap_iframe }}
+        </div>
+      {%- when 'map_api' -%}
+        {% if block.settings.api_map != blank %}
+          <div class="map__google-api data-aos data-aos--fade-in">
+            <div id="googleMap" style="height:{{ block.settings.section_height }};"></div>
+            {%- if block.settings.map_title != blank or block.settings.address != blank -%}
+              <div class="map__overlay-wrapper">
+                <div class="map__overlay">
+                  <div class="map__overlay-inner">
+                    {%- if block.settings.map_title != blank -%}
+                      <h3 class="data-aos data-aos--fade-in">{{ block.settings.map_title | escape }}</h3>
+                    {%- endif -%}
+                    {%- if block.settings.address != blank -%}
+                      <div class="data-aos data-aos--fade-in rte">{{ block.settings.address }}</div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+          <script>
+            function myMap() {
+              let latitude = '{{ block.settings.latitude }}';
+              let longitude = '{{ block.settings.longitude }}';
+              let mapProp = {
+                center: new google.maps.LatLng(latitude, longitude),
+                zoom: 10,
+              };
+              let map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+            }
+          </script>
+        {% endif %}
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "map_api",
+      "name": "t:sections.google-map.blocks.map_api.name",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "map_title",
+          "type": "text",
+          "label": "t:sections.google-map.blocks.map_api.settings.map_title.label",
+          "default": "Heading"
+        },
+        {
+          "id": "address",
+          "type": "richtext",
+          "label": "t:sections.google-map.blocks.map_api.settings.address.label",
+          "default": "<p>301 Front St W<br>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br>Saturday, 8:30am - 10:30pm<br>Sunday, 8:30am - 10:30pm</p>"
+        },
+        {
+          "type": "text",
+          "id": "api_map",
+          "label": "t:sections.google-map.blocks.map_api.settings.api_map.label",
+          "info": "You'll need to [register a Google maps API key](https://help.shopify.com/manual/using-themes/troubleshooting/map-section-api-key) to display the map"
+        },
+        {
+          "type": "text",
+          "id": "latitude",
+          "label": "t:sections.google-map.blocks.map_api.settings.latitude.label"
+        },
+        {
+          "type": "text",
+          "id": "longitude",
+          "label": "t:sections.google-map.blocks.map_api.settings.longitude.label"
+        },
+        {
+          "type": "select",
+          "id": "section_height",
+          "label": "Map height",
+          "label": "t:sections.google-map.blocks.map_api.settings.section",
+          "default": "450px",
+          "options": [
+            {
+              "label": "t:sections.google-map.blocks.map_api.settings.section_height.options__1.label",
+              "value": "350px"
+            },
+            {
+              "label": "t:sections.google-map.blocks.map_api.settings.section_height.options__2.label",
+              "value": "450px"
+            },
+            {
+              "label": "t:sections.google-map.blocks.map_api.settings.section_height.options__3.label",
+              "value": "550px"
+            },
+            {
+              "label": "t:sections.google-map.blocks.map_api.settings.section_height.options__4.label",
+              "value": "650px"
+            },
+            {
+              "label": "t:sections.google-map.blocks.map_api.settings.section_height.options__5.label",
+              "value": "750px"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "map_iframe",
+      "name": "t:sections.google-map.blocks.map_iframe.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "googlemap_iframe",
+          "label": "t:sections.google-map.blocks.map_iframe.settings",
+          "info": "For further information, please see [Google maps documentation](https://Section_name/pages/Enma.Dev-theme-documentation#map)",
+          "default": "'></iframe></p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.google-map.presets.name",
+      "blocks": [
+        {
+          "type": "map_iframe"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

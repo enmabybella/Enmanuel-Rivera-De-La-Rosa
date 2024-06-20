@@ -1,0 +1,162 @@
+{% style %}
+  #{{ section.id }} h2,
+  #{{ section.id }} .rich-text__text p {
+      color: {{section.settings.color_text}};
+  }
+  #{{ section.id }} .rich-text__text p > a {
+      color: rgba(var(--color-accent-1));
+  }
+{% endstyle %}
+
+<div id="{{ section.id }}" class="section rich-text-section color-{{ section.settings.color_bg }}">
+  <div class="columns is-mobile is-multiline is-marginless is-justify-content-center">
+    <div class="column is-6-desktop is-8-tablet is-12-mobile has-text-centered">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 class="data-aos data-aos--fade-in">{{ block.settings.heading | escape }}</h2>
+
+          {%- when 'text' -%}
+            <div class="rich-text__text data-aos data-aos--fade-in rte">{{ block.settings.text }}</div>
+
+          {% when 'custom_liquid' %}
+            <div class="section">
+              <div class="custom__liquid">
+                {{ block.settings.custom_liquid }}
+              </div>
+            </div>
+          {%- when 'button' -%}
+            {%- if block.settings.button_label != blank -%}
+              <div class="mt-5">
+                <a
+                  href="{{ block.settings.button_link }}"
+                  class="button button--primary data-aos data-aos--fade-in"
+                  {% if block.settings.button_link == blank %}
+                    aria-disabled="true"
+                  {% endif %}
+                >
+                  {{- block.settings.button_label | escape -}}
+                </a>
+              </div>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_bg",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.rich-text.settings.color_bg.options__1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.rich-text.settings.color_bg.options__2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.rich-text.settings.color_bg.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.rich-text.settings.color_bg.options__4.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.rich-text.settings.color_bg.label"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.rich-text.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Talk about your brand",
+          "label": "t:sections.rich-text.blocks.heading.settings.heading.label",
+          "info": "12 words max recommended"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.rich-text.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+          "label": "t:sections.rich-text.blocks.text.settings.text.label",
+          "info": "26 words max recommended"
+        }
+      ]
+    },
+    {
+      "type": "custom_liquid",
+      "name": "t:sections.custom-liquid.settings.custom_liquid.label",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.custom-liquid.settings.custom_liquid.label",
+          "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.rich-text.blocks.button.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "t:sections.rich-text.blocks.button.settings.button_label.label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.rich-text.blocks.button.settings.button_link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.rich-text.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

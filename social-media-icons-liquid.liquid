@@ -1,0 +1,75 @@
+{{ 'section-social-media-icons.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+.social-section .title {
+  color: {{ section.settings.color_text }}
+}
+{% endstyle %}
+
+<div class="section social-section {% if section.settings.color_accent %} color-accent{% endif %} " {% if section.settings.bg_color != blank %}style="background-color:{{section.settings.bg_color}};"{% endif %}>
+  <div class="page-width">
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'heading' -%}
+      <h2 class="h2 has-text-centered title data-aos data-aos--fade-in">{{ block.settings.heading | escape }}</h2>
+    {%- endcase -%}
+    {%- endfor -%}
+    {% render 'social-icons', classes: 'is-flex social-list' %}
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",    
+      "default": "#2d2d2d",
+      "label": "t:sections.social-media-icons.settings.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "default": "#fff",
+      "label": "t:sections.social-media-icons.settings.color_text.label"
+    }, 
+    {
+      "type": "checkbox",
+      "id": "color_accent",
+      "default": false,
+      "label": "t:sections.social-media-icons.settings.color_accent.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.social-media-icons.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Follow Us on Social Media",
+          "label": "t:sections.social-media-icons.blocks.heading.settings.heading.label",
+          "info": "12 words max recommended"
+        }
+      ]
+    }
+
+
+  ],
+  "presets": [
+    {
+      "name": "t:sections.social-media-icons.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

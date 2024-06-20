@@ -1,0 +1,283 @@
+<script src="{{ 'video-banner.js' | asset_url }}" async></script>
+{{ 'video-banner.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+   #video-Banner-{{ section.id }} .banner__heading {
+     font-size: {{ section.settings.heading_size | times: 0.5 }}px;
+     line-height: {{ section.settings.heading_size | times: 0.5 }}px;
+   }
+   #video-Banner-{{ section.id }} .banner__box,
+   #video-Banner-{{ section.id }} .banner__heading,
+   #video-Banner-{{ section.id }} p{
+  color: {{ section.settings.box_content_color }} !important;
+   }
+   @media only screen and (min-width: 769px) {
+     #video-Banner-{{ section.id }} .banner__heading {
+       font-size: {{ section.settings.heading_size }}px;
+       line-height: {{ section.settings.heading_size }}px;
+     }
+   }
+{% endstyle %}
+<div id="video-Banner-{{ section.id }}" class="video-banner-section">
+  <div class="video__banner video__desktop-{{ section.settings.section_height_desktop }} video__mobile-{{ section.settings.section_height_mobile }}">
+    <div class="banner__medias video__content">
+      {% if section.settings.video == null and section.settings.video_url != null %}
+        {% if section.settings.video_url contains 'youtube.com/watch' %}
+          {%- assign video_id = section.settings.video_url | split: 'v=' -%}
+          {%- assign video_id = video_id[1] | split: '&' | first -%}
+
+          <iframe
+            id="ytplayer_static"
+            class="data-aos data-aos--fade-in"
+            src="//www.youtube.com/embed/{{ video_id }}?autoplay=1&enablejsapi=1&mute=1&loop=1&playlist={{ video_id }}&rel=0&showinfo=0&controls=0"
+            frameborder="0"
+          ></iframe>
+
+        {% elsif section.settings.video_url contains 'vimeo.com' %}
+          {%- assign video_id = section.settings.video_url | split: '.com/' -%}
+          {%- assign video_id = video_id[1] | split: '/' | last -%}
+
+          <iframe
+            class="b-hero_image lazy"
+            src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1&loop=1&muted=1"
+            width="640"
+            height="300"
+            frameborder="0"
+            allow="autoplay;  fullscreen"
+            allowfullscreen
+            muted
+            playsinline
+          >
+          </iframe>
+        {% endif -%}
+      {%- else %}
+        {{
+          section.settings.video
+          | video_tag: image_size: '1100x', autoplay: true, loop: true, controls: false, muted: true
+        }}
+      {% endif %}
+    </div>
+
+    {% if section.settings.heading != blank or section.settings.text != blank %}
+      <div class="banner__content page-width {% if section.settings.desktop_text_box_position_side %} position-{{section.settings.desktop_text_box_position_side}} {% endif %} position--{{ section.settings.desktop_text_box_position }}">
+        <div class="banner__box {% if section.settings.box_content %} color-{{ section.settings.color_bg }} {% endif %} {% if section.settings.box_opacity%} box-opacity{% endif %}">
+          {% if section.settings.heading %}
+            <h2 class="banner__heading data-aos data-aos--fade-in">
+              {{ section.settings.heading }}
+            </h2>
+          {% endif %}
+          {% if section.settings.text %}
+            <div class="banner__text mt-3 data-aos data-aos--fade-in rte">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+          {%- if section.settings.button_label != blank -%}
+            <div class="mt-5">
+              <a
+                href="{{ section.settings.button_link }}"
+                class="button button--primary data-aos data-aos--fade-in"
+                {% if section.settings.button_link == blank %}
+                  aria-disabled="true"
+                {% endif %}
+              >
+                {{- section.settings.button_label | escape -}}
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+  "class": "index-section--video",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "t:sections.video-banner.settings.heading.label",
+      "default": "Talk about your brand.",
+      "info": "8 words max recommended"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "t:sections.video-banner.settings.heading_size.label",
+      "default": 60,
+      "min": 40,
+      "max": 80,
+      "unit": "px"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.video-banner.settings.text.label",
+      "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+      "info": "26 words max recommended"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:sections.video-banner.settings.button_label.label",
+      "info": "t:sections.video-banner.settings.button_label.info"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.video-banner.settings.button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_text_box_position",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.video-banner.settings.desktop_text_box_position.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.video-banner.settings.desktop_text_box_position.options__2.label"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.video-banner.settings.desktop_text_box_position.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.video-banner.settings.desktop_text_box_position.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_text_box_position_side",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:sections.video-banner.settings.desktop_text_box_position_side.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.video-banner.settings.desktop_text_box_position_side.options__2.label"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:sections.video-banner.settings.desktop_text_box_position_side.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.video-banner.settings.desktop_text_box_position_side.label"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "t:sections.video-banner.settings.video_url.label",
+      "default": "https://www.youtube.com/watch?v=83sEuY6F5cY",
+      "accept": ["youtube", "vimeo"],
+      "info": "Supports YouTube, .MP4 and Vimeo. Not all features supported by Vimeo."
+    },
+    {
+      "type": "select",
+      "id": "section_height_desktop",
+      "label": "t:sections.video-banner.settings.section_height_desktop.label",
+      "default": "650px",
+      "options": [
+        {
+          "label": "t:sections.video-banner.settings.section_height_desktop.options__1.label",
+          "value": "450px"
+        },
+        {
+          "label": "t:sections.video-banner.settings.section_height_desktop.options__2.label",
+          "value": "550px"
+        },
+        {
+          "label": "t:sections.video-banner.settings.section_height_desktop.options__3.label",
+          "value": "650px"
+        },
+        {
+          "label": "t:sections.video-banner.settings.section_height_desktop.options__4.label",
+          "value": "750px"
+        },
+        {
+          "label": "t:sections.video-banner.settings.section_height_desktop.options__5.label",
+          "value": "100vh"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_height_mobile",
+      "label": "t:sections.video-banner.settings.section_height_mobile.label",
+      "default": "350px",
+      "options": [
+        {
+          "label": "t:sections.video-banner.settings.section_height_mobile.options__1.label",
+          "value": "350px"
+        },
+        {
+          "label": "t:sections.video-banner.settings.section_height_mobile.options__2.label",
+          "value": "450px"
+        },
+        {
+          "label": "t:sections.video-banner.settings.section_height_mobile.options__3.label",
+          "value": "550px"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "box_content",
+      "default": false,
+      "label": "t:sections.video-banner.settings.box_content.label"
+    },
+    {
+      "type": "select",
+      "id": "color_bg",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.video-banner.settings.color_bg.options__1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.video-banner.settings.color_bg.options__2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.video-banner.settings.color_bg.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.video-banner.settings.color_bg.options__4.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.video-banner.settings.color_bg.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "box_opacity",
+      "default": false,
+      "label": "t:sections.video-banner.settings.box_opacity.label"
+    },
+    {
+      "type": "color",
+      "id": "box_content_color",
+      "default": "#000",
+      "label": "t:sections.video-banner.settings.box_content_color.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.video-banner.presets.name",
+      "category": "Video"
+    }
+  ]
+}
+{% endschema %}

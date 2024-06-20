@@ -1,0 +1,104 @@
+{%- if section.settings.mode != 'disabled' -%}
+    <div
+    id="NewsletterPopup-{{ section.id }}"
+    class="modal modal--square modal--mobile-friendly"
+    data-section-id="{{ section.id }}"
+    data-section-type="newsletter-popup"
+    data-delay-days="{{ section.settings.popup_days }}"
+    data-delay-seconds="{{ section.settings.popup_seconds }}">
+        {% render 'newsletter-popup', section_id: section.id %}
+    </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Section name",
+  "class": "index-section--hidden",
+  "settings": [
+    {
+      "type":"header",
+      "content":"t:sections.newsletter-popup.settings.popup-modal.label"
+    },
+    {
+      "type": "select",
+      "id": "mode",
+      "label": "t:sections.newsletter-popup.settings.mode.label",
+      "default": "disabled",
+      "options": [
+        {
+          "value": "enabled",
+          "label": "t:sections.newsletter-popup.settings.mode.options__1.label"
+        },
+        {
+          "value": "disabled",
+          "label": "t:sections.newsletter-popup.settings.mode.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "popup_seconds",
+      "label": "t:sections.newsletter-popup.settings.popup_seconds.label",
+      "default": 30,
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "sec"
+    },
+    {
+      "type": "range",
+      "id": "popup_days",
+      "label": "t:sections.newsletter-popup.settings.popup_days.label",
+      "default": 30,
+      "info": "t:sections.newsletter-popup.settings.popup_days.info",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "day"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.newsletter-popup.settings.content.label"
+    },
+    {
+      "id": "popup_img",
+      "type": "image_picker",
+      "label": "t:sections.newsletter-popup.settings.popup_img.label"
+    },
+    {
+      "id": "popup_title",
+      "type": "text",
+      "label": "t:sections.newsletter-popup.settings.popup_title.label",
+      "default": "Download the Simplified Theme",
+      "info": "6 words max recommended"
+    },
+    {
+      "id": "popup_text",
+      "type": "richtext",
+      "label": "t:sections.newsletter-popup.settings.popup_text.label",
+      "info": "16 words max recommended"
+    },
+    {
+      "id": "modalLinkText",
+      "type": "text",
+      "label": "t:sections.newsletter-popup.settings.modalLinkText.label",
+      "default": "Learn More"
+    },
+    {
+      "id": "modalLinkUrl",
+      "type": "url",
+      "label": "t:sections.newsletter-popup.settings.modalLinkUrl.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.newsletter-popup.settings.newsletter.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "t:sections.newsletter-popup.settings.enable_newsletter.label",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

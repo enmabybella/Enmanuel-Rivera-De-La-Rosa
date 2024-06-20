@@ -1,0 +1,271 @@
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #{{ section.id }} h2,
+  #{{ section.id }} p,
+  #{{ section.id }} .form__message {
+    color: {{section.settings.color_text}} !important;
+  }
+  #{{ section.id }} .field__input::-webkit-input-placeholder {
+    color: {{section.settings.color_text}};
+  }
+  #{{ section.id }} .field__input::-moz-placeholder {
+    color: {{section.settings.color_text}};
+  }
+  #{{ section.id }} .field__input:-ms-input-placeholder {
+    color: {{section.settings.color_text}};
+  }
+  #{{ section.id }} .field__input:-moz-placeholder {
+    color: {{section.settings.color_text}};
+  }
+  #{{ section.id }} .newsletter-form .field__input{
+      color:{{section.settings.color_text}};
+  }
+
+  {% if settings.style == 'Default' %}
+   #{{ section.id }} .newsletter-form .field__input,
+    #{{ section.id }} .newsletter-form .newsletter__button {
+      border-bottom: 1px solid {{section.settings.color_text}};
+      border-radius: 0;
+    }
+    #{{ section.id }} .newsletter__button::after {
+    border-bottom: 2px solid {{ settings.colors_accent_1 }};
+  }
+
+      .newsletter-section .newsletter__button {
+      background-color: transparent;
+      color: rgba(var(--color-accent-1));
+    }
+
+    {% elsif settings.style == 'fashion' or settings.style == 'food' %}
+    #{{ section.id }} .newsletter-form .field__input {
+      border: 1px solid {{settings.color_input_border}};
+      background-color: {{ settings.colors_background_1 }};
+      color:{{ settings.colors_text }};
+    }
+
+    #{{ section.id }} .field__input::-webkit-input-placeholder {
+    color: {{settings.colors_text}};
+  }
+  #{{ section.id }} .field__input::-moz-placeholder {
+    color: {{settings.colors_text}};
+  }
+  #{{ section.id }} .field__input:-ms-input-placeholder {
+    color: {{settings.colors_text}};
+  }
+  #{{ section.id }} .field__input:-moz-placeholder {
+    color: {{settings.colors_text}};
+  }
+
+    {% elsif settings.style == 'jewel' %}
+    #{{ section.id }} .newsletter-form .field__input{
+      border-bottom: 1px solid {{settings.color_input_border}};
+      border-radius: 0;
+    }
+
+    {% elsif settings.style == 'electronic' %}
+    #{{ section.id }} .newsletter-form .field__input {
+      border: 1px solid {{settings.color_input_border}};
+      background-color: {{  settings.colors_background_2 }}50;
+    }
+
+    .newsletter-section .newsletter__button {
+      background-color: {{  settings.colors_background_1 }};
+      color: rgba(var(--color-accent-1));
+    }
+
+     {%endif%}
+
+  #{{ section.id }} .newsletter-form .newsletter__button {
+    outline: none !important;
+  }
+
+  .newsletter_jewel,  .newsletter_food {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn_border_radius{
+    border-radius: {{ settings.btn_border_radius  }}px;
+  }
+  .input_border_radius{
+    border-radius: {{ settings.input_border_radius  }}px;
+  }
+
+  @media all and (max-width: 480px){
+    #{{ section.id }} .newsletter-form .newsletter__button{
+      border-bottom: none;
+    }
+  }
+{% endstyle %}
+
+<div
+  id="{{ section.id }}"
+  class="newsletter-section section"
+  style="
+    {% if section.settings.bg_color != blank %} background-color:{{section.settings.bg_color}};{% endif %}
+    {% if section.settings.bg_image != blank %} background-image:url({{section.settings.bg_image | img_url: 'master'}});background-repeat: no-repeat;background-size: cover;{% endif %}
+  "
+>
+  <div>
+    <div class="{% if settings.style == 'jewel' or settings.style == 'food' %}page-width-small{% else %}page-width{% endif %}">
+      <div class="columns is-mobile is-multiline is-vcentered newsletter_{{ settings.style }}">
+        {% if section.settings.enable_mail_icon %}
+          <i class="mail-icon">{%- render 'icon-mail' -%}</i>
+        {% endif %}
+        <div class="column {% if settings.style == 'fashion' %}is-6-desktop is-6-tablet{% elsif settings.style == 'food' or settings.style == 'jewel' %}is-12-desktop is-12-tablet{% else %}is-4-desktop is-4-tablet{% endif %} is-12-mobile">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'heading' -%}
+                <h2 class="h2 data-aos data-aos--fade-in">{{ block.settings.heading | escape }}</h2>
+              {%- when 'text' -%}
+                <div class="newsletter__text rte data-aos data-aos--fade-in rte">{{ block.settings.text }}</div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+        <div class="column {% if settings.style == 'fashion' %}is-6-desktop is-6-tablet{% elsif settings.style == 'food' or settings.style == 'jewel' %}is-6-desktop is-6-tablet{% else %}is-8-desktop is-8-tablet{% endif %} is-12-mobile column-form data-aos data-aos--fade-in">
+          {% form 'customer', class: 'newsletter-form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="newsletter-form__field-wrapper">
+              <div class="newsletter-form__field-wrapper-inner is-flex">
+                <div class="field ">
+                  <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="field__input {% if settings.style == 'jewel'%}text-center{%endif%} {% if settings.style == 'food' %}input_border_radius{%endif%} has-bg"
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                      aria-describedby="Newsletter-error--{{ section.id }}"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="Newsletter-success--{{ section.id }}"
+                    {% endif %}
+                    placeholder="{{ 'newsletter.label' | t }}"
+                    pattern=".+\.[a-zA-Z]{2,6}"
+                    required
+                  >
+                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                    {{ 'newsletter.label' | t }}
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  class="
+                    newsletter__button button button--primary {% if settings.style == 'fashion' or settings.style == 'electronic' %}field-gap{% endif %}
+                    {% if settings.style == 'default' %}has-line{% endif %}
+                  "
+                  name="commit"
+                >
+                  {{ 'newsletter.button_label' | t }}
+                </button>
+              </div>
+
+              {%- if form.errors -%}
+                <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                  {%- render 'icon-error' -%}
+                  {{- form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email -}}
+                </small>
+              {%- endif -%}
+            </div>
+
+            {%- if form.posted_successfully? -%}
+              <p
+                class="newsletter-form__message newsletter-form__message--success form__message"
+                id="Newsletter-success--{{ section.id }}"
+                tabindex="-1"
+                autofocus
+              >
+                {% render 'icon-success' -%}
+                {{- 'newsletter.success' | t }}
+              </p>
+            {%- endif -%}
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image",
+      "info": "1920 x 350px .jpg recommended"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "default": "#000000",
+      "label": "t:sections.newsletter.settings.bg_color.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.newsletter.settings.paragraph.content"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "default": "#000000",
+      "label": "t:sections.newsletter.settings.color_text.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mail_icon",
+      "label": "t:sections.newsletter.settings.enable_mail_icon.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.newsletter.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.newsletter.blocks.heading.settings.heading.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.newsletter.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>all</p>",
+          "label": "t:sections.newsletter.blocks.text.settings.text.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.newsletter.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

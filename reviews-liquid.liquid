@@ -1,0 +1,303 @@
+{{ 'section-reviews.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .reviewsSlider-{{ section.id }} .reviews-wrapper .reviews-slider .flickity-button-icon {
+     fill: {{section.settings.color_text}} !important;
+   }
+   .reviewsSlider-{{ section.id }} .reviews-wrapper .reviews-slider .flickity-page-dots .dot{
+     background: {{section.settings.dots_color}} !important;
+   }
+   .reviewsSlider-{{ section.id }} .reviews-wrapper .reviews-slider .reviews__text p{
+     color:{{ section.settings.color_text }};
+   }
+   .reviewsSlider-{{ section.id }} .review__image .fill-star {
+     fill: {{ section.settings.color_review_stars | default: settings.colors_accent_1 }}
+   }
+</style>
+
+<div
+  class="reviewsSlider-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="reviews-section"
+>
+  <div class="slider-wrapper">
+    <div class="reviews-wrapper section color-{{ section.settings.bg_color }} {{ block.id }}">
+      <div class="page-width">
+        {%- if section.settings.heading != blank -%}
+          <h2
+            class="data-aos data-aos--fade-in data-aos--delay-200"
+            style="color:{{ section.settings.color_title }};"
+          >
+            {{ section.settings.heading | escape }}
+          </h2>
+        {%- endif -%}
+      </div>
+      <div class="page-width">
+        <div
+          class="reviews-slider slideshow__slide_container"
+          id="ReviewsSlider-{{ section.id }}"
+          data-natural="true"
+          data-autoplay="{{ section.settings.slide_autoplay }}"
+          data-speed="{{ section.settings.autoplay_time | times: 1000 }}"
+          {% if settings.navigation_type == 'arrows' %}
+            data-arrows="true"
+          {% endif %}
+          {% if settings.navigation_type == 'dots' %}
+            data-dots="true"
+          {% endif %}
+          data-count="{{ section.blocks.size }}"
+        >
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'review' -%}
+                <div class="slideshow__slide  {% if forloop.index0 < 3 %}show_on_load{% endif %}  reviews__slide review-slide--{{ block.id }} {% if section.settings.columns_same_height %}columns_same_height{% endif %}">
+                  <div class="has-text-centered reviews__content data-aos data-aos--fade-in">
+                    {% unless block.settings.star_count == blank %}
+                      <div class="review__image">
+                        {% case block.settings.star_count %}
+                          {% when '1' %}
+                            {% render 'icon-star-1' %}
+                          {% when '1.5' %}
+                            {% render 'icon-star-1-5' %}
+                          {% when '2' %}
+                            {% render 'icon-star-2' %}
+                          {% when '2.5' %}
+                            {% render 'icon-star-2-5' %}
+                          {% when '3' %}
+                            {% render 'icon-star-3' %}
+                          {% when '3.5' %}
+                            {% render 'icon-star-3-5' %}
+                          {% when '4' %}
+                            {% render 'icon-star-4' %}
+                          {% when '4.5' %}
+                            {% render 'icon-star-4-5' %}
+                          {% when '5' %}
+                            {% render 'icon-star-5' %}
+                          {% else %}
+                            {% render 'icon-testimonial' %}
+                        {% endcase %}
+                      </div>
+                    {% endunless %}
+                    {% unless block.settings.review__text == blank %}
+                      <div class="reviews__text rte">
+                        {{ block.settings.review__text }}
+                      </div>
+                    {% endunless %}
+                    {% unless block.settings.review__author == blank %}
+                      <p
+                        class="reviews__author has-text-weight-bold data-aos data-aos--fade-in"
+                        style=" color:{{ section.settings.color_text }};"
+                      >
+                        {{ block.settings.review__author | escape }}
+                      </p>
+                    {% endunless %}
+                  </div>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+        <div class="has-text-centered button-wrapper">
+          {%- if section.settings.view_all and section.settings.view_all_link != blank -%}
+            <a
+              href="{{ section.settings.view_all_link }}"
+              class="button button--primary"
+            >
+              {{ 'sections.reviews.view_all' | t }}
+              {% if settings.show_arrow %}
+                <span class="btn-arrow">
+                  {% render 'btn-arrow' %}
+                </span>
+              {% endif %}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "slide_autoplay",
+      "default": false,
+      "label": "t:sections.reviews.settings.slide_autoplay.label"
+    },
+    {
+      "type": "color",
+      "id": "dots_color",
+      "default": "#000",
+      "label": "t:sections.reviews.settings.dots_color.label"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_time",
+      "min": 5,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "unit": "s",
+      "label": "t:sections.reviews.settings.autoplay_time.label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Reviews",
+      "label": "t:sections.reviews.settings.heading.label",
+      "info": "5 words max recommended"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "default": "#fff",
+      "label": "t:sections.reviews.settings.color_title.label"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "default": "#000",
+      "label": "t:sections.reviews.settings.color_text.label"
+    },
+    {
+      "type": "color",
+      "id": "color_review_stars",
+      "label": "t:sections.reviews.settings.color_review_stars.label"
+    },
+    {
+      "type": "color",
+      "id": "color_review_empty_star",
+      "default": "#000",
+      "label": "t:sections.reviews.settings.color_review_empty_star.label"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.reviews.settings.bg_color.options__1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.reviews.settings.bg_color.options__2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.reviews.settings.bg_color.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.reviews.settings.bg_color.options__4.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.reviews.settings.bg_color.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "view_all",
+      "default": false,
+      "label": "t:sections.reviews.settings.view_all.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "columns_same_height",
+      "label": "t:sections.reviews.settings.column_height.label"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "t:sections.reviews.settings.view_all_link.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "t:sections.reviews.blocks.review.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "star_count",
+          "options": [
+            {
+              "value": "quote_",
+              "label": "Quote"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "1.5",
+              "label": "1.5"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "2.5",
+              "label": "2.5"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "3.5",
+              "label": "3.5"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "4.5",
+              "label": "4.5"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "label": "t:sections.reviews.blocks.review.settings.star_count.label",
+          "default": "5"
+        },
+        {
+          "type": "richtext",
+          "id": "review__text",
+          "label": "t:sections.reviews.blocks.review.settings.review__text.label",
+          "default": "<p>Share what your customers are saying about your products, customer service or shipping rates</p>",
+          "info": "14 words max recommended"
+        },
+        {
+          "type": "text",
+          "id": "review__author",
+          "label": "t:sections.reviews.blocks.review.settings.review__author.label",
+          "default": "-Author name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.reviews.presets.name",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

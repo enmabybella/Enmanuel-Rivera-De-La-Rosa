@@ -1,0 +1,2660 @@
+<script aria-hidden="true" nonce="">window.wiz_progress&&window.wiz_progress();</script>
+<script nonce="">AF_initDataCallback({key: 'ds:2', hash: '2', data:[true], sideChannel: {}});</script>
+{% style %}{% render
+element.style {
+}
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+user agent stylesheet
+script {
+	display: none;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+(function(){'use strict';var c=window,d=[];c.aft_counter=d;var e=[],f=0;function _recordIsAboveFold(a){if(!c._isLazyImage(a)&&!a.hasAttribute("data-noaft")&&a.src){var b=(c._isVisible||function(){})(c.document,a);a.setAttribute("data-atf",b);b&&(-1!==e.indexOf(a)||-1!==d.indexOf(a)||a.complete||d.push(a),a.hasAttribute("data-iml")&&(a=Number(a.getAttribute("data-iml")),a>f&&(f=a)))}}
+c.initAft=function(){f=0;e=Array.prototype.slice.call(document.getElementsByTagName("img")).filter(function(a){return!!a.getAttribute("data-iml")});[].forEach.call(document.getElementsByTagName("img"),function(a){try{_recordIsAboveFold(a)}catch(b){throw b.message=a.hasAttribute("data-iid")?b.message+"\nrecordIsAboveFold error for defer inlined image":b.message+("\nrecordIsAboveFold error for img element with <src: "+a.src+">"),b;}});if(0===d.length)c.onaft(f)};}).call(this);
+initAft()
+<script nonce="">(function(){'use strict';var c=window,d=[];c.aft_counter=d;var e=[],f=0;function _recordIsAboveFold(a){if(!c._isLazyImage(a)&&!a.hasAttribute("data-noaft")&&a.src){var b=(c._isVisible||function(){})(c.document,a);a.setAttribute("data-atf",b);b&&(-1!==e.indexOf(a)||-1!==d.indexOf(a)||a.complete||d.push(a),a.hasAttribute("data-iml")&&(a=Number(a.getAttribute("data-iml")),a>f&&(f=a)))}}
+c.initAft=function(){f=0;e=Array.prototype.slice.call(document.getElementsByTagName("img")).filter(function(a){return!!a.getAttribute("data-iml")});[].forEach.call(document.getElementsByTagName("img"),function(a){try{_recordIsAboveFold(a)}catch(b){throw b.message=a.hasAttribute("data-iid")?b.message+"\nrecordIsAboveFold error for defer inlined image":b.message+("\nrecordIsAboveFold error for img element with <src: "+a.src+">"),b;}});if(0===d.length)c.onaft(f)};}).call(this);
+initAft()</script>
+<script nonce="">AF_initDataCallback({key: 'ds:0', hash: '1', data:[[[11,[null,null,null,null,[null,null,"/store/games"]],"Games"],[1,[null,null,null,null,[null,null,"/store/apps"]],"Apps"],[9,[null,null,null,null,[null,null,"/store/movies"]],"Movies \u0026 TV"],[5,[null,null,null,null,[null,null,"/store/books"]],"Books"],[13,[null,null,null,null,[null,null,"/store/apps/category/FAMILY"]],"Kids"]]], sideChannel: {}});</script>
+AF_initDataCallback({key: 'ds:0', hash: '1', data:[[[11,[null,null,null,null,[null,null,"/store/games"]],"Games"],[1,[null,null,null,null,[null,null,"/store/apps"]],"Apps"],[9,[null,null,null,null,[null,null,"/store/movies"]],"Movies \u0026 TV"],[5,[null,null,null,null,[null,null,"/store/books"]],"Books"],[13,[null,null,null,null,[null,null,"/store/apps/category/FAMILY"]],"Kids"]]], sideChannel: {}});
+<script nonce="">AF_initDataCallback({key: 'ds:0', hash: '1', data:[[[11,[null,null,null,null,[null,null,"/store/games"]],"Games"],[1,[null,null,null,null,[null,null,"/store/apps"]],"Apps"],[9,[null,null,null,null,[null,null,"/store/movies"]],"Movies \u0026 TV"],[5,[null,null,null,null,[null,null,"/store/books"]],"Books"],[13,[null,null,null,null,[null,null,"/store/apps/category/FAMILY"]],"Kids"]]], sideChannel: {}});</script>
+<script nonce="">AF_initDataCallback({key: 'ds:2', hash: '2', data:[true], sideChannel: {}});</script>
+<script nonce="">AF_initDataCallback({key: 'ds:6', hash: '3', data:[[[[null,null,"https://play.google.com/intl/en_us/about/play-terms.html"],"Terms of Service"],[[null,null,"https://policies.google.com/privacy"],"Privacy"],[[null,null,"https://support.google.com/googleplay/?p\u003dabout_play"],"About Google Play"],[[null,null,"http://developer.android.com/index.html"],"Developers"],[[null,null,"https://store.google.com/?playredirect\u003dtrue"],"Google Store"]],"United States","English",null,[null,null,"https://ssl.gstatic.com/store/images/regionflags/us.png"]], sideChannel: {}});</script>
+AF_initDataCallback({key: 'ds:6', hash: '3', data:[[[[null,null,"https://play.google.com/intl/en_us/about/play-terms.html"],"Terms of Service"],[[null,null,"https://policies.google.com/privacy"],"Privacy"],[[null,null,"https://support.google.com/googleplay/?p\u003dabout_play"],"About Google Play"],[[null,null,"http://developer.android.com/index.html"],"Developers"],[[null,null,"https://store.google.com/?playredirect\u003dtrue"],"Google Store"]],"United States","English",null,[null,null,"https://ssl.gstatic.com/store/images/regionflags/us.png"]], sideChannel: {}});
+<script nonce="">AF_initDataCallback({key: 'ds:6', hash: '3', data:[[[[null,null,"https://play.google.com/intl/en_us/about/play-terms.html"],"Terms of Service"],[[null,null,"https://policies.google.com/privacy"],"Privacy"],[[null,null,"https://support.google.com/googleplay/?p\u003dabout_play"],"About Google Play"],[[null,null,"http://developer.android.com/index.html"],"Developers"],[[null,null,"https://store.google.com/?playredirect\u003dtrue"],"Google Store"]],"United States","English",null,[null,null,"https://ssl.gstatic.com/store/images/regionflags/us.png"]], sideChannel: {}});</script>
+<script nonce="">AF_initDataCallback({key: 'ds:5', hash: '4', data:[[[[]]],[null,null,null,null,null,null,null,null,null,null,null,[["7477369468615479075",8]],[[[null,null,null,null,null,[null,null,"https://enmastylishfurniture.app"]]],[[null,2,null,[null,null,"https://play-lh.googleusercontent.com/zuk3KM8vQPOsvo-fhg4nOYSsPtL14gfH_aCo4c3CcIq661M4fnnnEHem_kJa0oVSm88"]]],[[null,2,null,[null,null,"https://play-lh.googleusercontent.com/h4bhvcv09dSAw7oLN_1bnxamm8l1vunBmnBP5yWYNoO3UVnvnxX-QB01_xtfi0BMvQ"]],1],null,["Enma.Dev"],[null,[null,"Complete your home with modern  comfortable  and Stylish Furniture"]]],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[[1,2,3,5,6]]]], sideChannel: {}});</script>
+AF_initDataCallback({key: 'ds:5', hash: '4', data:[[[[]]],[null,null,null,null,null,null,null,null,null,null,null,[["7477369468615479075",8]],[[[null,null,null,null,null,[null,null,"https://enmastylishfurniture.app"]]],[[null,2,null,[null,null,"https://play-lh.googleusercontent.com/zuk3KM8vQPOsvo-fhg4nOYSsPtL14gfH_aCo4c3CcIq661M4fnnnEHem_kJa0oVSm88"]]],[[null,2,null,[null,null,"https://play-lh.googleusercontent.com/h4bhvcv09dSAw7oLN_1bnxamm8l1vunBmnBP5yWYNoO3UVnvnxX-QB01_xtfi0BMvQ"]],1],null,["Enma.Dev"],[null,[null,"Complete your home with modern  comfortable  and Stylish Furniture"]]],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[[1,2,3,5,6]]]], sideChannel: {}});
+<script nonce="">AF_initDataCallback({key: 'ds:5', hash: '4', data:[[[[]]],[null,null,null,null,null,null,null,null,null,null,null,[["7477369468615479075",8]],[[[null,null,null,null,null,[null,null,"https://enmastylishfurniture.app"]]],[[null,2,null,[null,null,"https://play-lh.googleusercontent.com/zuk3KM8vQPOsvo-fhg4nOYSsPtL14gfH_aCo4c3CcIq661M4fnnnEHem_kJa0oVSm88"]]],[[null,2,null,[null,null,"https://play-lh.googleusercontent.com/h4bhvcv09dSAw7oLN_1bnxamm8l1vunBmnBP5yWYNoO3UVnvnxX-QB01_xtfi0BMvQ"]],1],null,["Enma.Dev"],[null,[null,"Complete your home with modern  comfortable  and Stylish Furniture"]]],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[[1,2,3,5,6]]]], sideChannel: {}});</script>
+
+element.style {
+}
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+user agent stylesheet
+script {
+	display: none;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+}
+<script nonce="">AF_initDataCallback({key: 'ds:1', hash: '5', data:[[[[[["Library \u0026 devices",null,[null,null,"/apps"],null,null,"play_apps",null,null,null,[162]],["Payments \u0026 subscriptions",null,[null,null,"/store/paymentmethods"],null,null,"payment",null,null,null,[163]],["My Play activity",null,[null,null,"/store/myplayactivity"],null,null,"reviews",null,null,null,[164]],["Offers",null,[null,null,"/store/account/rewards"],null,null,"redeem",null,null,null,[165]],["Play Pass",null,[null,null,"/store/pass/getstarted"],null,null,null,[null,"\u003csvg width\u003d\"12\" height\u003d\"18\" viewBox\u003d\"0 0 12 18\" fill\u003d\"none\" xmlns\u003d\"http://www.w3.org/2000/svg\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M8.88699 15.6667H9.33366C9.79283 15.6667 10.167 15.2933 10.167 14.8333V3.16666C10.167 2.7075 9.79283 2.33333 9.33366 2.33333H8.88699C8.68366 3.745 7.46616 4.83333 6.00033 4.83333C4.53283 4.83333 3.31533 3.745 3.11283 2.33333H2.66699C2.20699 2.33333 1.83366 2.7075 1.83366 3.16666V14.8333C1.83366 15.2933 2.20699 15.6667 2.66699 15.6667H3.11283C3.31616 14.255 4.53366 13.1667 6.00033 13.1667C7.46699 13.1667 8.68449 14.255 8.88699 15.6667M8.08449 17.3333C7.62366 17.3333 7.25116 16.9608 7.25116 16.5V16.0833C7.25033 15.3942 6.68949 14.8333 6.00033 14.8333C5.31033 14.8333 4.75033 15.3942 4.75033 16.0833L4.74949 16.5008C4.74949 16.9608 4.37616 17.3333 3.91616 17.3333H2.66699C1.28783 17.3333 0.166992 16.2117 0.166992 14.8333V3.16666C0.166992 1.78833 1.28783 0.666664 2.66699 0.666664H3.91616C4.37616 0.666664 4.74949 1.04 4.74949 1.5V1.91666C4.75033 2.60583 5.31033 3.16666 6.00033 3.16666C6.68949 3.16666 7.25033 2.60583 7.25033 1.91666L7.25116 1.49833C7.25199 1.03833 7.62449 0.666664 8.08449 0.666664H9.33366C10.712 0.666664 11.8337 1.78833 11.8337 3.16666V14.8333C11.8337 16.2117 10.712 17.3333 9.33366 17.3333H8.08449Z\" fill\u003d\"#5F6368\"/\u003e\u003c/svg\u003e"],null,null,[4184]],["Play Points",null,[null,null,"/store/points/enroll"],null,null,null,[null,"\u003csvg width\u003d\"20\" height\u003d\"20\" viewBox\u003d\"0 0 20 20\" xmlns\u003d\"http://www.w3.org/2000/svg\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M17.0832 11.1667C17.7498 10.5 17.7498 9.41666 17.0832 8.83332L12.3332 4.08332L11.1665 2.91666C10.4998 2.24999 9.4165 2.24999 8.83317 2.91666L2.9165 8.83332C2.24984 9.49999 2.24984 10.5833 2.9165 11.1667L8.83317 17.0833C9.49984 17.75 10.5832 17.75 11.1665 17.0833L17.0832 11.1667ZM9.99984 15.9167L4.08317 9.99999L9.99984 4.08332L15.9165 9.99999L9.99984 15.9167ZM9.99984 7.66666L12.3332 9.99999L9.99984 12.3333L7.6665 9.99999L9.99984 7.66666Z\"/\u003e\u003cmask id\u003d\"playPointsIcon-mask0\" mask-type\u003d\"alpha\" maskUnits\u003d\"userSpaceOnUse\" x\u003d\"2\" y\u003d\"2\" width\u003d\"16\" height\u003d\"16\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M17.0832 11.1667C17.7498 10.5 17.7498 9.41666 17.0832 8.83332L12.3332 4.08332L11.1665 2.91666C10.4998 2.24999 9.4165 2.24999 8.83317 2.91666L2.9165 8.83332C2.24984 9.49999 2.24984 10.5833 2.9165 11.1667L8.83317 17.0833C9.49984 17.75 10.5832 17.75 11.1665 17.0833L17.0832 11.1667ZM9.99984 15.9167L4.08317 9.99999L9.99984 4.08332L15.9165 9.99999L9.99984 15.9167ZM9.99984 7.66666L12.3332 9.99999L9.99984 12.3333L7.6665 9.99999L9.99984 7.66666Z\"/\u003e\u003c/mask\u003e\u003cg mask\u003d\"url(#playPointsIcon-mask0)\"\u003e\u003crect width\u003d\"20\" height\u003d\"20\"/\u003e\u003c/g\u003e\u003c/svg\u003e"],null,null,[153]]]],[[["Settings",null,[null,null,"/settings"],null,null,"settings"]]],[[["Switch account",null,[null,null,"https://accounts.google.com/AccountChooser?service\u003dgoogleplay"],null,null,"switch_account",null,null,true],["Sign out",null,[null,null,"https://accounts.google.com/Logout?service\u003dgoogleplay"],null,null,"logout",null,null,true]]]]],null,["Boaty McBoatface","boaty.Optional[541807022529]@example.com",[null,null,"https://dev2-lighthouse.sandbox.google.com/image/-0WLBjpcpKXs/AAAAAAAAAAI/AAAAAAAAABA/LDootBMwzFA/photo.jpg"],[[null,null,"https://myaccount.google.com/"],"Manage your Google Account"]]], sideChannel: {}});</script>
+
+element.style {
+}
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+user agent stylesheet
+script {
+	display: none;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+}
+AF_initDataCallback({key: 'ds:1', hash: '5', data:[[[[[["Library \u0026 devices",null,[null,null,"/apps"],null,null,"play_apps",null,null,null,[162]],["Payments \u0026 subscriptions",null,[null,null,"/store/paymentmethods"],null,null,"payment",null,null,null,[163]],["My Play activity",null,[null,null,"/store/myplayactivity"],null,null,"reviews",null,null,null,[164]],["Offers",null,[null,null,"/store/account/rewards"],null,null,"redeem",null,null,null,[165]],["Play Pass",null,[null,null,"/store/pass/getstarted"],null,null,null,[null,"\u003csvg width\u003d\"12\" height\u003d\"18\" viewBox\u003d\"0 0 12 18\" fill\u003d\"none\" xmlns\u003d\"http://www.w3.org/2000/svg\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M8.88699 15.6667H9.33366C9.79283 15.6667 10.167 15.2933 10.167 14.8333V3.16666C10.167 2.7075 9.79283 2.33333 9.33366 2.33333H8.88699C8.68366 3.745 7.46616 4.83333 6.00033 4.83333C4.53283 4.83333 3.31533 3.745 3.11283 2.33333H2.66699C2.20699 2.33333 1.83366 2.7075 1.83366 3.16666V14.8333C1.83366 15.2933 2.20699 15.6667 2.66699 15.6667H3.11283C3.31616 14.255 4.53366 13.1667 6.00033 13.1667C7.46699 13.1667 8.68449 14.255 8.88699 15.6667M8.08449 17.3333C7.62366 17.3333 7.25116 16.9608 7.25116 16.5V16.0833C7.25033 15.3942 6.68949 14.8333 6.00033 14.8333C5.31033 14.8333 4.75033 15.3942 4.75033 16.0833L4.74949 16.5008C4.74949 16.9608 4.37616 17.3333 3.91616 17.3333H2.66699C1.28783 17.3333 0.166992 16.2117 0.166992 14.8333V3.16666C0.166992 1.78833 1.28783 0.666664 2.66699 0.666664H3.91616C4.37616 0.666664 4.74949 1.04 4.74949 1.5V1.91666C4.75033 2.60583 5.31033 3.16666 6.00033 3.16666C6.68949 3.16666 7.25033 2.60583 7.25033 1.91666L7.25116 1.49833C7.25199 1.03833 7.62449 0.666664 8.08449 0.666664H9.33366C10.712 0.666664 11.8337 1.78833 11.8337 3.16666V14.8333C11.8337 16.2117 10.712 17.3333 9.33366 17.3333H8.08449Z\" fill\u003d\"#5F6368\"/\u003e\u003c/svg\u003e"],null,null,[4184]],["Play Points",null,[null,null,"/store/points/enroll"],null,null,null,[null,"\u003csvg width\u003d\"20\" height\u003d\"20\" viewBox\u003d\"0 0 20 20\" xmlns\u003d\"http://www.w3.org/2000/svg\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M17.0832 11.1667C17.7498 10.5 17.7498 9.41666 17.0832 8.83332L12.3332 4.08332L11.1665 2.91666C10.4998 2.24999 9.4165 2.24999 8.83317 2.91666L2.9165 8.83332C2.24984 9.49999 2.24984 10.5833 2.9165 11.1667L8.83317 17.0833C9.49984 17.75 10.5832 17.75 11.1665 17.0833L17.0832 11.1667ZM9.99984 15.9167L4.08317 9.99999L9.99984 4.08332L15.9165 9.99999L9.99984 15.9167ZM9.99984 7.66666L12.3332 9.99999L9.99984 12.3333L7.6665 9.99999L9.99984 7.66666Z\"/\u003e\u003cmask id\u003d\"playPointsIcon-mask0\" mask-type\u003d\"alpha\" maskUnits\u003d\"userSpaceOnUse\" x\u003d\"2\" y\u003d\"2\" width\u003d\"16\" height\u003d\"16\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M17.0832 11.1667C17.7498 10.5 17.7498 9.41666 17.0832 8.83332L12.3332 4.08332L11.1665 2.91666C10.4998 2.24999 9.4165 2.24999 8.83317 2.91666L2.9165 8.83332C2.24984 9.49999 2.24984 10.5833 2.9165 11.1667L8.83317 17.0833C9.49984 17.75 10.5832 17.75 11.1665 17.0833L17.0832 11.1667ZM9.99984 15.9167L4.08317 9.99999L9.99984 4.08332L15.9165 9.99999L9.99984 15.9167ZM9.99984 7.66666L12.3332 9.99999L9.99984 12.3333L7.6665 9.99999L9.99984 7.66666Z\"/\u003e\u003c/mask\u003e\u003cg mask\u003d\"url(#playPointsIcon-mask0)\"\u003e\u003crect width\u003d\"20\" height\u003d\"20\"/\u003e\u003c/g\u003e\u003c/svg\u003e"],null,null,[153]]]],[[["Settings",null,[null,null,"/settings"],null,null,"settings"]]],[[["Switch account",null,[null,null,"https://accounts.google.com/AccountChooser?service\u003dgoogleplay"],null,null,"switch_account",null,null,true],["Sign out",null,[null,null,"https://accounts.google.com/Logout?service\u003dgoogleplay"],null,null,"logout",null,null,true]]]]],null,["Boaty McBoatface","boaty.Optional[541807022529]@example.com",[null,null,"https://dev2-lighthouse.sandbox.google.com/image/-0WLBjpcpKXs/AAAAAAAAAAI/AAAAAAAAABA/LDootBMwzFA/photo.jpg"],[[null,null,"https://myaccount.google.com/"],"Manage your Google Account"]]], sideChannel: {}});
+<script nonce="">AF_initDataCallback({key: 'ds:1', hash: '5', data:[[[[[["Library \u0026 devices",null,[null,null,"/apps"],null,null,"play_apps",null,null,null,[162]],["Payments \u0026 subscriptions",null,[null,null,"/store/paymentmethods"],null,null,"payment",null,null,null,[163]],["My Play activity",null,[null,null,"/store/myplayactivity"],null,null,"reviews",null,null,null,[164]],["Offers",null,[null,null,"/store/account/rewards"],null,null,"redeem",null,null,null,[165]],["Play Pass",null,[null,null,"/store/pass/getstarted"],null,null,null,[null,"\u003csvg width\u003d\"12\" height\u003d\"18\" viewBox\u003d\"0 0 12 18\" fill\u003d\"none\" xmlns\u003d\"http://www.w3.org/2000/svg\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M8.88699 15.6667H9.33366C9.79283 15.6667 10.167 15.2933 10.167 14.8333V3.16666C10.167 2.7075 9.79283 2.33333 9.33366 2.33333H8.88699C8.68366 3.745 7.46616 4.83333 6.00033 4.83333C4.53283 4.83333 3.31533 3.745 3.11283 2.33333H2.66699C2.20699 2.33333 1.83366 2.7075 1.83366 3.16666V14.8333C1.83366 15.2933 2.20699 15.6667 2.66699 15.6667H3.11283C3.31616 14.255 4.53366 13.1667 6.00033 13.1667C7.46699 13.1667 8.68449 14.255 8.88699 15.6667M8.08449 17.3333C7.62366 17.3333 7.25116 16.9608 7.25116 16.5V16.0833C7.25033 15.3942 6.68949 14.8333 6.00033 14.8333C5.31033 14.8333 4.75033 15.3942 4.75033 16.0833L4.74949 16.5008C4.74949 16.9608 4.37616 17.3333 3.91616 17.3333H2.66699C1.28783 17.3333 0.166992 16.2117 0.166992 14.8333V3.16666C0.166992 1.78833 1.28783 0.666664 2.66699 0.666664H3.91616C4.37616 0.666664 4.74949 1.04 4.74949 1.5V1.91666C4.75033 2.60583 5.31033 3.16666 6.00033 3.16666C6.68949 3.16666 7.25033 2.60583 7.25033 1.91666L7.25116 1.49833C7.25199 1.03833 7.62449 0.666664 8.08449 0.666664H9.33366C10.712 0.666664 11.8337 1.78833 11.8337 3.16666V14.8333C11.8337 16.2117 10.712 17.3333 9.33366 17.3333H8.08449Z\" fill\u003d\"#5F6368\"/\u003e\u003c/svg\u003e"],null,null,[4184]],["Play Points",null,[null,null,"/store/points/enroll"],null,null,null,[null,"\u003csvg width\u003d\"20\" height\u003d\"20\" viewBox\u003d\"0 0 20 20\" xmlns\u003d\"http://www.w3.org/2000/svg\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M17.0832 11.1667C17.7498 10.5 17.7498 9.41666 17.0832 8.83332L12.3332 4.08332L11.1665 2.91666C10.4998 2.24999 9.4165 2.24999 8.83317 2.91666L2.9165 8.83332C2.24984 9.49999 2.24984 10.5833 2.9165 11.1667L8.83317 17.0833C9.49984 17.75 10.5832 17.75 11.1665 17.0833L17.0832 11.1667ZM9.99984 15.9167L4.08317 9.99999L9.99984 4.08332L15.9165 9.99999L9.99984 15.9167ZM9.99984 7.66666L12.3332 9.99999L9.99984 12.3333L7.6665 9.99999L9.99984 7.66666Z\"/\u003e\u003cmask id\u003d\"playPointsIcon-mask0\" mask-type\u003d\"alpha\" maskUnits\u003d\"userSpaceOnUse\" x\u003d\"2\" y\u003d\"2\" width\u003d\"16\" height\u003d\"16\"\u003e\u003cpath fill-rule\u003d\"evenodd\" clip-rule\u003d\"evenodd\" d\u003d\"M17.0832 11.1667C17.7498 10.5 17.7498 9.41666 17.0832 8.83332L12.3332 4.08332L11.1665 2.91666C10.4998 2.24999 9.4165 2.24999 8.83317 2.91666L2.9165 8.83332C2.24984 9.49999 2.24984 10.5833 2.9165 11.1667L8.83317 17.0833C9.49984 17.75 10.5832 17.75 11.1665 17.0833L17.0832 11.1667ZM9.99984 15.9167L4.08317 9.99999L9.99984 4.08332L15.9165 9.99999L9.99984 15.9167ZM9.99984 7.66666L12.3332 9.99999L9.99984 12.3333L7.6665 9.99999L9.99984 7.66666Z\"/\u003e\u003c/mask\u003e\u003cg mask\u003d\"url(#playPointsIcon-mask0)\"\u003e\u003crect width\u003d\"20\" height\u003d\"20\"/\u003e\u003c/g\u003e\u003c/svg\u003e"],null,null,[153]]]],[[["Settings",null,[null,null,"/settings"],null,null,"settings"]]],[[["Switch account",null,[null,null,"https://accounts.google.com/AccountChooser?service\u003dgoogleplay"],null,null,"switch_account",null,null,true],["Sign out",null,[null,null,"https://accounts.google.com/Logout?service\u003dgoogleplay"],null,null,"logout",null,null,true]]]]],null,["Boaty McBoatface","boaty.Optional[541807022529]@example.com",[null,null,"https://dev2-lighthouse.sandbox.google.com/image/-0WLBjpcpKXs/AAAAAAAAAAI/AAAAAAAAABA/LDootBMwzFA/photo.jpg"],[[null,null,"https://myaccount.google.com/"],"Manage your Google Account"]]], sideChannel: {}});</script>
+<script nonce="">AF_initDataCallback({key: 'ds:7', hash: '6', data:[[[[[[null,null,"/store/pass/getstarted"],"Play Pass",null,["qgIF0gECEAE\u003d"]],[[null,null,"/store/points/enroll"],"Play Points",null,["qgIF0gECEAI\u003d"]],[[null,null,"https://play.google.com/about/giftcards"],"Gift cards",null,["qgIF0gECEAM\u003d"]],[[null,null,"/redeem"],"Redeem",null,["qgIF0gECEAQ\u003d"]],[[null,null,"https://support.google.com/googleplay/answer/134336"],"Refund policy",null,["qgIF0gECEAU\u003d"]]],"Google Play"],[[[[null,null,"https://support.google.com/googleplay?p\u003dpff_parentguide"],"Parent Guide",null,["qgIF0gECEAc\u003d"]],[[null,null,"https://support.google.com/googleplay/answer/7007852"],"Family sharing",null,["qgIF0gECEAg\u003d"]]],"Kids \u0026 family"]]], sideChannel: {}});</script>
+AF_initDataCallback({key: 'ds:7', hash: '6', data:[[[[[[null,null,"/store/pass/getstarted"],"Play Pass",null,["qgIF0gECEAE\u003d"]],[[null,null,"/store/points/enroll"],"Play Points",null,["qgIF0gECEAI\u003d"]],[[null,null,"https://play.google.com/about/giftcards"],"Gift cards",null,["qgIF0gECEAM\u003d"]],[[null,null,"/redeem"],"Redeem",null,["qgIF0gECEAQ\u003d"]],[[null,null,"https://support.google.com/googleplay/answer/134336"],"Refund policy",null,["qgIF0gECEAU\u003d"]]],"Google Play"],[[[[null,null,"https://support.google.com/googleplay?p\u003dpff_parentguide"],"Parent Guide",null,["qgIF0gECEAc\u003d"]],[[null,null,"https://support.google.com/googleplay/answer/7007852"],"Family sharing",null,["qgIF0gECEAg\u003d"]]],"Kids \u0026 family"]]], sideChannel: {}});
+<script nonce="">AF_initDataCallback({key: 'ds:7', hash: '6', data:[[[[[[null,null,"/store/pass/getstarted"],"Play Pass",null,["qgIF0gECEAE\u003d"]],[[null,null,"/store/points/enroll"],"Play Points",null,["qgIF0gECEAI\u003d"]],[[null,null,"https://play.google.com/about/giftcards"],"Gift cards",null,["qgIF0gECEAM\u003d"]],[[null,null,"/redeem"],"Redeem",null,["qgIF0gECEAQ\u003d"]],[[null,null,"https://support.google.com/googleplay/answer/134336"],"Refund policy",null,["qgIF0gECEAU\u003d"]]],"Google Play"],[[[[null,null,"https://support.google.com/googleplay?p\u003dpff_parentguide"],"Parent Guide",null,["qgIF0gECEAc\u003d"]],[[null,null,"https://support.google.com/googleplay/answer/7007852"],"Family sharing",null,["qgIF0gECEAg\u003d"]]],"Kids \u0026 family"]]], sideChannel: {}});</script>
+<script nonce="">AF_initDataCallback({key: 'ds:4',  data:[5,null,[["type.googleapis.com/wireless.android.finsky.boq.web.data.store.error.PlayDataError",[1]]]],errorHasStatus: true,});</script>
+<script nonce="">AF_initDataCallback({key: 'ds:3', hash: '7', data:[[null,[[null,null,null,["qgI8EjoKIwohChttb3JlX2J5Xzc0NzczNjk0Njg2MTU0NzkwNzUQLRgDEADyCBBNb3JlIGJ5IEVubWEuRGV2",[["more_by_7477369468615479075",2]]],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[[[["com.es2a.enmaRR",7],[null,2,[512,512],[null,null,"https://play-lh.googleusercontent.com/SYKMij9tBvZVNFVVMymrP4tw1w_CFbp2U0EJyh5w-4d4KPnLiuax9fY8ZXqqfMPjB5k"],null,[253,253,253,255],null,null,null,2],[[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/odKTP8kgZEJEiyLTUFXS0uLwclIm1ygZivwjLC5XXDrAlE99Nf9nL6LC2JIUTAWPZGA"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/AtG9VywFDlxG3jFMrnQIhjUZ5d0rlMBRDIa8y9UhQ7a8D0R_y47CZ1MuXaXBinjHz2cW"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/hTuLDNsx-K85z7sb141Ecyll2rre8L_2jXQgm4C2o64t1kyLfQ2AukeFShLssmH_x-9D"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/YREEN-TkNKiST7oSX39gQMHfo-LowR01fiMAm3buWX_8ZtgarMZ_8NA802OBtJTPVlc"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/kOxYt_-dA4YjT5QUsBmrWEXgHnNyPlKH3lX8ZCFYXNAQ5UQH3EWmsD4Njw-hiuug6No"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/MmbVVfzdWAj8vNoR2QhU-xIYUD0lX6DuzsBMSDGdJ7F_xfk9ag4hRQtopYHQLJqXJbGb"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/jgsGJr8xGPfIImrAG-wpNLE3w4v4DwZwTQgffXL2g4RPzrqQwaJHR10Y5c57WJ7D2cg"]]],"Enma R R",[],"Shopping",null,null,[null,[[0,"USD",""]],null,[null,"Buy"],null,1,[null,null,null,null,null,[null,null,"https://play.google.com/store/apps/details?id\u003dcom.es2a.enmaRR\u0026rdid\u003dcom.es2a.enmaRR\u0026feature\u003dmd\u0026offerId"]],null,["CAE\u003d"],null,null,null,null,null,null,null,[]],[[null,1]],[null,null,null,null,[null,null,"/store/apps/details?id\u003dcom.es2a.enmaRR"]],["qgJEGkIIABIXChUKD2NvbS5lczJhLmVubWFSUhABGANKEwiZhYXM67WGAxWYyoMDHfG7DZP6AQ8KDQgAEgkKBWVuLVVTEAA\u003d"],null,[null,"At Enma R R, we provide you with an excellent shopping experience And we make shopping smart and affordable by offering a variety of unique products at very affordable prices, as our client’s satisfaction matter a lot. We Always aim to exceed the expectations of our customers and deliver quality products to your door steps, We have the perfect combination of Best products that are tailored to meet your needs through our standard shopping practice.\u003cbr\u003e\u003cbr\u003eOur simple yet user-friendly app is designed to offer streamlined shopping experience from selecting, buying, and delivering the product to your doorstep.\u003cbr\u003e\u003cbr\u003eApp features:\u003cbr\u003e\u003cbr\u003e+ Full access to all products\u003cbr\u003e+ See product details\u003cbr\u003e+ Quick order completion\u003cbr\u003e+ Mobile access to the account\u003cbr\u003e+ Online order processing"],"Enma.Dev","5+",null,"",null,null,null,null,[null,2,[500,1024],[null,null,"https://play-lh.googleusercontent.com/EBck9IL_DRNJYT7Ouy46ZPyLbPVlVK_13Y8d_3uMqfwQ2BYM35lHSxfX1MbCQFHp0i2I"],null,[254,254,254,255]],null,["Everyone",[null,2,[512,512],[null,null,"https://play-lh.googleusercontent.com/IciOnDFecb5Xt50Q2jlcNC0LPI7LEGxNojroo-s3AozcyS-vDCwtq4fn7u3wZmRna8OewG9PBrWC-i7i"]],null,null,[null,"\u003ca href\u003d\"https://support.google.com/googleplay?p\u003dappgame_ratings\"\u003eLearn more\u003c/a\u003e"],false,[null,"Content is generally suitable for all ages. May contain minimal cartoon, fantasy or mild violence and/or infrequent use of mild language."],[null,2,[272,272],[null,null,"https://play-lh.googleusercontent.com/OBVqgRK7eerY0GPfK8AOzitu5oE9ecC6kG4kURTCb1K41gpqVsN0WjmJwJh-wX8vILzpcc1kYHt56aLN2g"]],[null,null,null,null,null,[null,null,"https://support.google.com/googleplay?p\u003dappgame_ratings"]]],[[[[[null,[[0,"USD",""]],null,[null,"Buy"],null,1,[null,null,null,null,null,[null,null,"https://play.google.com/store/apps/details?id\u003dcom.es2a.enmaRR\u0026rdid\u003dcom.es2a.enmaRR\u0026feature\u003dmd\u0026offerId"]],null,["CAE\u003d"],null,null,null,null,null,null,null,[]]],["Install"],null,["CgYKBENBRT0\u003d"]]]],[2],[2],[1,null,false]],[["com.es2a.enmafurniture",7],[null,2,[512,512],[null,null,"https://play-lh.googleusercontent.com/phFkIsmbcxTCLtyainfbDJYytZ4za6nswCcOK5dl_wbyEkU5jr3NCZ5aP7Haea6qGQ"],null,[0,0,0,255],null,null,null,2],[[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/AC7fkgE2IFCBhZAadRhi9D_t9Kp61PTHHtzu0Lrjk4pPrnhtp6BtLL6p6fDkq41pjKc"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/iPTgN697CbH5FTlK-Bb1K6XoTWzG3uk3kEwKm2oHkAsvZ7hkaTiOUnEEJauTJFXgrw_G"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/CcNgVSmwYo4SXi6xkd3iNotnFgN-o6bhAwjgesuSKAvuukEmrjdQuEStJOBpIqHdAR0"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/KNeH5t0RwIyFO8Sc-cRK8pps5h-5bQBLKMp9ke4we5j3ysk_pzTX19hg4EvrkVf_NKs"]],[null,2,[2498,1224],[null,null,"https://play-lh.googleusercontent.com/Hl3EM340jSRxPHYtxl5KzO05BleC5fF0ROkpQTh85CHSH4L3BYMyD0KA6AWXm5y5yQ"]]],"Enma_Furniture",[],"Shopping",null,null,[null,[[0,"USD",""]],null,[null,"Buy"],null,1,[null,null,null,null,null,[null,null,"https://play.google.com/store/apps/details?id\u003dcom.es2a.enmafurniture\u0026rdid\u003dcom.es2a.enmafurniture\u0026feature\u003dmd\u0026offerId"]],null,["CAE\u003d"],null,null,null,null,null,null,null,[]],[[null,1]],[null,null,null,null,[null,null,"/store/apps/details?id\u003dcom.es2a.enmafurniture"]],["qgJLGkkIARIeChwKFmNvbS5lczJhLmVubWFmdXJuaXR1cmUQARgDShMImYWFzOu1hgMVmMqDAx3xuw2T+gEPCg0IABIJCgVlbi1VUxAA"],null,[null,"Shop around for some of the best deals online. We work closely with many suppliers to get you low prices for high quality products. Have a look and see. Take advantage of pur price while stock lasts!\u003cbr\u003e\u003cbr\u003eOur simple yet user-friendly app is designed to offer streamlined shopping experience from selecting, buying, and delivering the product to your doorstep.\u003cbr\u003e\u003cbr\u003eApp features:\u003cbr\u003e\u003cbr\u003e+ Full access to all products\u003cbr\u003e+ See product details\u003cbr\u003e+ Quick order completion\u003cbr\u003e+ Mobile access to the account\u003cbr\u003e+ Online order processing"],"Enma.Dev","1+",null,"",null,null,null,null,[null,2,[500,1024],[null,null,"https://play-lh.googleusercontent.com/jS4yUGV955n1KMKhrOZ1aQx4gaVuzf1DB42nZNDqCaVfIGa0uYzm9thhHy_d7UqS3mWW"],null,[0,0,0,255]],null,["Everyone",[null,2,[512,512],[null,null,"https://play-lh.googleusercontent.com/IciOnDFecb5Xt50Q2jlcNC0LPI7LEGxNojroo-s3AozcyS-vDCwtq4fn7u3wZmRna8OewG9PBrWC-i7i"]],null,null,[null,"\u003ca href\u003d\"https://support.google.com/googleplay?p\u003dappgame_ratings\"\u003eLearn more\u003c/a\u003e"],false,[null,"Content is generally suitable for all ages. May contain minimal cartoon, fantasy or mild violence and/or infrequent use of mild language."],[null,2,[272,272],[null,null,"https://play-lh.googleusercontent.com/OBVqgRK7eerY0GPfK8AOzitu5oE9ecC6kG4kURTCb1K41gpqVsN0WjmJwJh-wX8vILzpcc1kYHt56aLN2g"]],[null,null,null,null,null,[null,null,"https://support.google.com/googleplay?p\u003dappgame_ratings"]]],[[[[[null,[[0,"USD",""]],null,[null,"Buy"],null,1,[null,null,null,null,null,[null,null,"https://play.google.com/store/apps/details?id\u003dcom.es2a.enmafurniture\u0026rdid\u003dcom.es2a.enmafurniture\u0026feature\u003dmd\u0026offerId"]],null,["CAE\u003d"],null,null,null,null,null,null,null,[]]],["Install"],null,["CgYKBENBRT0\u003d"]]]],[2],[2],[1,null,false]]],["More by Enma.Dev",null,[null,null,null,null,[null,null,"/store/apps/collection/cluster?clp\u003digM4ChkKEzc0NzczNjk0Njg2MTU0NzkwNzUQCBgDEhkKEzc0NzczNjk0Njg2MTU0NzkwNzUQCBgDGAA%3D:S:ANO1ljL5_TQ\u0026gsr\u003dCjuKAzgKGQoTNzQ3NzM2OTQ2ODYxNTQ3OTA3NRAIGAMSGQoTNzQ3NzM2OTQ2ODYxNTQ3OTA3NRAIGAMYAA%3D%3D:S:ANO1ljKdU7g"]],null,true]]]],null,[],true,["qgIMCgoKBlNUUkVBTRoA"]]], sideChannel: {}});</script>
+<script id="wiz_jd" nonce="">if (window['_wjdc']) {const wjd = {}; window['_wjdc'](wjd); delete window['_wjdc'];}</script>
+<script aria-hidden="true" id="WIZ-footer" nonce="">window.wiz_progress&&window.wiz_progress(); window.stopScanForCss&&window.stopScanForCss(); ccTick('bl');</script>
+<div class="product__accordion accordion quick-add-hidden">
+                  <details id="Details-collapsible-row-1-template--22808431493422__main">
+                    <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      
+                      
+                    </div>
+                  </details>
+                </div>
+<details id="Details-collapsible-row-1-template--22808431493422__main">
+                    <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      
+                      
+                    </div>
+                  </details>
+
+
+element.style {
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+user agent stylesheet
+details {
+	display: block;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+}
+<summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+<div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+<div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+<svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+<path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path>
+
+element.style {
+}
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+path[Attributes Style] {
+	d: path("M 10 2.62639 L 8.54072 7.33639 C 8.34848 7.95687 7.79714 8.37696 7.17504 8.37696 H 2.45272 L 6.27316 11.2879 C 6.77645 11.6714 6.98704 12.3511 6.7948 12.9716 L 5.33552 17.6816 L 9.15596 14.7706 C 9.65925 14.3872 10.3408 14.3872 10.844 14.7706 L 14.6645 17.6816 L 13.2052 12.9716 C 13.013 12.3511 13.2236 11.6714 13.7268 11.2879 L 17.5473 8.37696 H 12.825 C 12.2029 8.37696 11.6515 7.95687 11.4593 7.33639 L 10 2.62639 Z M 10.4552 0.846855 C 10.3119 0.384382 9.68806 0.384382 9.54477 0.846855 L 7.63027 7.02616 C 7.56619 7.23298 7.38241 7.37301 7.17504 7.37301 H 0.979572 C 0.515888 7.37301 0.323098 7.99527 0.698226 8.28109 L 5.71047 12.1001 C 5.87823 12.2279 5.94843 12.4545 5.88435 12.6613 L 3.96984 18.8406 C 3.82656 19.3031 4.33129 19.6877 4.70642 19.4019 L 9.71865 15.5828 C 9.88642 15.455 10.1136 15.455 10.2813 15.5828 L 15.2936 19.4019 C 15.6687 19.6877 16.1734 19.3031 16.0302 18.8406 L 14.1157 12.6613 C 14.0516 12.4545 14.1218 12.2279 14.2895 12.1001 L 19.3018 8.28109 C 19.6769 7.99527 19.4841 7.37301 19.0204 7.37301 H 12.825 C 12.6176 7.37301 12.4338 7.23298 12.3697 7.02616 L 10.4552 0.846855 Z");
+	fill-rule: evenodd;
+}
+user agent stylesheet
+:not(svg) {
+	transform-origin: 0px 0px;
+}
+.accordion .icon-accordion {
+	align-self: center;
+	fill: rgb(var(--color-foreground));
+	height: calc(var(--font-heading-scale)* 2rem);
+	margin-right: calc(var(--font-heading-scale)* 1rem);
+	width: calc(var(--font-heading-scale)* 2rem);
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+.accordion summary {
+	display: flex;
+	position: relative;
+	line-height: 1;
+	padding: 1.5rem 0;
+}
+summary {
+	cursor: pointer;
+	list-style: none;
+	position: relative;
+}
+user agent stylesheet
+details > summary:first-of-type {
+	list-style: inside disclosure-closed;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+}
+
+<svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+<h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+
+<div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+<svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path>
+<svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+<summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+<div class="accordion__content rte" id="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      
+                      
+                    </div>
+
+element.style {
+}
+.product__accordion .accordion__content {
+	padding: 0 1rem;
+}
+
+.accordion__content {
+	margin-bottom: 1.5rem;
+	word-break: break-word;
+	overflow-x: auto;
+	padding: 0 .6rem;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+img, html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, table, caption, tbody, tfoot, thead, tr, th, td, form, fieldset, embed, object, applet {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+details>* {
+	box-sizing: border-box;
+}
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+user agent stylesheet
+div {
+	display: block;
+	unicode-bidi: isolate;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+.rte:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+}
+<div class="accordion__content rte" id="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      
+                      
+                    </div>
+<details id="Details-collapsible-row-1-template--22808431493422__main">
+                    <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      
+                      
+                    </div>
+                  </details>
+<div class="product__accordion accordion quick-add-hidden">
+                  <details id="Details-collapsible-row-1-template--22808431493422__main">
+                    <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2.62639L8.54072 7.33639C8.34848 7.95687 7.79714 8.37696 7.17504 8.37696H2.45272L6.27316 11.2879C6.77645 11.6714 6.98704 12.3511 6.7948 12.9716L5.33552 17.6816L9.15596 14.7706C9.65925 14.3872 10.3408 14.3872 10.844 14.7706L14.6645 17.6816L13.2052 12.9716C13.013 12.3511 13.2236 11.6714 13.7268 11.2879L17.5473 8.37696H12.825C12.2029 8.37696 11.6515 7.95687 11.4593 7.33639L10 2.62639ZM10.4552 0.846855C10.3119 0.384382 9.68806 0.384382 9.54477 0.846855L7.63027 7.02616C7.56619 7.23298 7.38241 7.37301 7.17504 7.37301H0.979572C0.515888 7.37301 0.323098 7.99527 0.698226 8.28109L5.71047 12.1001C5.87823 12.2279 5.94843 12.4545 5.88435 12.6613L3.96984 18.8406C3.82656 19.3031 4.33129 19.6877 4.70642 19.4019L9.71865 15.5828C9.88642 15.455 10.1136 15.455 10.2813 15.5828L15.2936 19.4019C15.6687 19.6877 16.1734 19.3031 16.0302 18.8406L14.1157 12.6613C14.0516 12.4545 14.1218 12.2279 14.2895 12.1001L19.3018 8.28109C19.6769 7.99527 19.4841 7.37301 19.0204 7.37301H12.825C12.6176 7.37301 12.4338 7.23298 12.3697 7.02616L10.4552 0.846855Z" fill-rule="evenodd"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Product features
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-collapsible-row-1-template--22808431493422__main">
+                      
+                      
+                    </div>
+                  </details>
+                </div>
+<div class="product__accordion accordion quick-add-hidden">
+                  <details id="Details-collapsible-row-0-template--22808431493422__main">
+                    <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      
+                      
+                    </div>
+                  </details>
+                </div>
+
+element.style {
+}
+.accordion+.accordion {
+	margin-top: 0;
+	border-top: none;
+}
+.accordion {
+	margin-top: 2.5rem;
+	margin-bottom: 0;
+	border-top: .1rem solid rgba(var(--color-foreground), .08);
+	border-bottom: .1rem solid rgba(var(--color-foreground), .08);
+}
+.product__info-container>*+* {
+	margin: 1.5rem 0;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+img, html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, table, caption, tbody, tfoot, thead, tr, th, td, form, fieldset, embed, object, applet {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+user agent stylesheet
+div {
+	display: block;
+	unicode-bidi: isolate;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+}
+<details id="Details-collapsible-row-0-template--22808431493422__main">
+                    <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      
+                      
+                    </div>
+                  </details>
+<details id="Details-collapsible-row-0-template--22808431493422__main">
+                    <summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+                    <div class="accordion__content rte" id="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      
+                      
+                    </div>
+                  </details>
+<summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+                    </summary>
+
+<div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+                      </div>
+<svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+<path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+<path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+<path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+<path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path>
+<svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+<h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+<div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+                      </div>
+<svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+element.style {
+}
+.accordion .summary__title+.icon-caret {
+	height: calc(var(--font-heading-scale)* .6rem);
+}
+summary .icon-caret {
+	position: absolute;
+	height: .6rem;
+	right: 1.5rem;
+	top: calc(50% - .2rem);
+}
+* {
+	box-sizing: border-box;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+user agent stylesheet
+svg:not(:root) {
+	overflow-clip-margin: content-box;
+	overflow: hidden;
+}
+.accordion summary {
+	display: flex;
+	position: relative;
+	line-height: 1;
+	padding: 1.5rem 0;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+summary {
+	cursor: pointer;
+	list-style: none;
+	position: relative;
+}
+user agent stylesheet
+details > summary:first-of-type {
+	list-style: inside disclosure-closed;
+}
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	padding: 0;
+	list-style: none;
+	column-gap: var(--grid-mobile-horizontal-spacing);
+	row-gap: var(--grid-mobile-vertical-spacing);
+}
+body, .color-scheme-1, .color-scheme-2, .color-scheme-3, .color-scheme-4, .color-scheme-5 {
+	color: rgba(var(--color-foreground), 0.75);
+	background-color: rgb(var(--color-background));
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+body {
+	background-color: white;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	height: 100%;
+	line-height: 1;
+	margin: 0;
+	position: static;
+	z-index: 0;
+}
+body {
+	background-color: #eee;
+	color: #333;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 1.4;
+	height: 100%;
+	position: relative;
+	text-rendering: optimizeLegibility;
+	z-index: -1;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, .87);
+	font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-size-adjust: 100%;
+}
+body {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: 100%;
+	min-height: 100%;
+	margin: 0;
+	font-size: 1.5rem;
+	letter-spacing: 0.06rem;
+	line-height: calc(1 + 0.8 / var(--font-body-scale));
+	font-family: var(--font-body-family);
+	font-style: var(--font-body-style);
+	font-weight: var(--font-body-weight);
+}
+style attribute {
+	--header-height: 150px;
+	padding-bottom: 92px;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	:root {
+		--easter-egg: none;
+		--sparkle: url(admin-e-r.app);
+	}
+}
+:root {
+	--duration-short: .1s;
+	--duration-default: .2s;
+	--duration-announcement-bar: .25s;
+	--duration-medium: .3s;
+	--duration-long: .5s;
+	--duration-extra-long: .6s;
+	--duration-extra-longer: .75s;
+	--duration-extended: 3s;
+	--ease-out-slow: cubic-bezier(0, 0, .3, 1);
+	--animation-slide-in: slideIn var(--duration-extra-long) var(--ease-out-slow) forwards;
+	--animation-fade-in: fadeIn var(--duration-extra-long) var(--ease-out-slow);
+}
+:root {
+	--alpha-button-background: 1;
+	--alpha-button-border: 1;
+	--alpha-link: .85;
+	--alpha-badge-border: .1;
+}
+:root {
+	--font-body-family: Futura, sans-serif;
+	--font-body-style: normal;
+	--font-body-weight: 400;
+	--font-body-weight-bold: 700;
+	--font-heading-family: "DM Sans", sans-serif;
+	--font-heading-style: normal;
+	--font-heading-weight: 500;
+	--font-body-scale: 1.0;
+	--font-heading-scale: 1.05;
+	--media-padding: px;
+	--media-border-opacity: 0.05;
+	--media-border-width: 1px;
+	--media-radius: 8px;
+	--media-shadow-opacity: 0.0;
+	--media-shadow-horizontal-offset: 0px;
+	--media-shadow-vertical-offset: 4px;
+	--media-shadow-blur-radius: 5px;
+	--media-shadow-visible: 0;
+	--page-width: 120rem;
+	--page-width-margin: 0rem;
+	--product-card-image-padding: 1.2rem;
+	--product-card-corner-radius: 0.8rem;
+	--product-card-text-alignment: left;
+	--product-card-border-width: 0.0rem;
+	--product-card-border-opacity: 0.1;
+	--product-card-shadow-opacity: 0.0;
+	--product-card-shadow-visible: 0;
+	--product-card-shadow-horizontal-offset: 0.0rem;
+	--product-card-shadow-vertical-offset: 0.4rem;
+	--product-card-shadow-blur-radius: 0.5rem;
+	--collection-card-image-padding: 0.0rem;
+	--collection-card-corner-radius: 0.8rem;
+	--collection-card-text-alignment: left;
+	--collection-card-border-width: 0.0rem;
+	--collection-card-border-opacity: 0.1;
+	--collection-card-shadow-opacity: 0.0;
+	--collection-card-shadow-visible: 0;
+	--collection-card-shadow-horizontal-offset: 0.0rem;
+	--collection-card-shadow-vertical-offset: 0.4rem;
+	--collection-card-shadow-blur-radius: 0.5rem;
+	--blog-card-image-padding: 0.0rem;
+	--blog-card-corner-radius: 0.8rem;
+	--blog-card-text-alignment: left;
+	--blog-card-border-width: 0.0rem;
+	--blog-card-border-opacity: 0.1;
+	--blog-card-shadow-opacity: 0.0;
+	--blog-card-shadow-visible: 0;
+	--blog-card-shadow-horizontal-offset: 0.0rem;
+	--blog-card-shadow-vertical-offset: 0.4rem;
+	--blog-card-shadow-blur-radius: 0.5rem;
+	--badge-corner-radius: 4.0rem;
+	--popup-border-width: 1px;
+	--popup-border-opacity: 0.1;
+	--popup-corner-radius: 8px;
+	--popup-shadow-opacity: 0.05;
+	--popup-shadow-horizontal-offset: 0px;
+	--popup-shadow-vertical-offset: 4px;
+	--popup-shadow-blur-radius: 5px;
+	--drawer-border-width: 1px;
+	--drawer-border-opacity: 0.1;
+	--drawer-shadow-opacity: 0.0;
+	--drawer-shadow-horizontal-offset: 0px;
+	--drawer-shadow-vertical-offset: 4px;
+	--drawer-shadow-blur-radius: 5px;
+	--spacing-sections-desktop: 0px;
+	--spacing-sections-mobile: 0px;
+	--grid-desktop-vertical-spacing: 12px;
+	--grid-desktop-horizontal-spacing: 12px;
+	--grid-mobile-vertical-spacing: 6px;
+	--grid-mobile-horizontal-spacing: 6px;
+	--text-boxes-border-opacity: 0.1;
+	--text-boxes-border-width: 0px;
+	--text-boxes-radius: 8px;
+	--text-boxes-shadow-opacity: 0.0;
+	--text-boxes-shadow-visible: 0;
+	--text-boxes-shadow-horizontal-offset: 0px;
+	--text-boxes-shadow-vertical-offset: 4px;
+	--text-boxes-shadow-blur-radius: 5px;
+	--buttons-radius: 6px;
+	--buttons-radius-outset: 7px;
+	--buttons-border-width: 1px;
+	--buttons-border-opacity: 1.0;
+	--buttons-shadow-opacity: 0.0;
+	--buttons-shadow-visible: 0;
+	--buttons-shadow-horizontal-offset: 0px;
+	--buttons-shadow-vertical-offset: 4px;
+	--buttons-shadow-blur-radius: 5px;
+	--buttons-border-offset: 0.3px;
+	--inputs-radius: 6px;
+	--inputs-border-width: 1px;
+	--inputs-border-opacity: 0.55;
+	--inputs-shadow-opacity: 0.0;
+	--inputs-shadow-horizontal-offset: 0px;
+	--inputs-margin-offset: 0px;
+	--inputs-shadow-vertical-offset: 4px;
+	--inputs-shadow-blur-radius: 5px;
+	--inputs-radius-outset: 7px;
+	--variant-pills-radius: 40px;
+	--variant-pills-border-width: 1px;
+	--variant-pills-border-opacity: 0.55;
+	--variant-pills-shadow-opacity: 0.0;
+	--variant-pills-shadow-horizontal-offset: 0px;
+	--variant-pills-shadow-vertical-offset: 4px;
+	--variant-pills-shadow-blur-radius: 5px;
+}
+:root, .color-scheme-1 {
+	--color-background: 244, 244, 244;
+	--gradient-background: #f4f4f4;
+	--color-foreground: 43, 44, 45;
+	--color-background-contrast: 180, 180, 180;
+	--color-shadow: 0, 17, 40;
+	--color-button: 183, 172, 162;
+	--color-button-text: 38, 38, 38;
+	--color-secondary-button: 244, 244, 244;
+	--color-secondary-button-text: 0, 17, 40;
+	--color-link: 0, 17, 40;
+	--color-badge-foreground: 43, 44, 45;
+	--color-badge-background: 244, 244, 244;
+	--color-badge-border: 43, 44, 45;
+	--payment-terms-background-color: rgb(244 244 244);
+}
+html {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Google Sans", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	height: 100%;
+	position: static;
+	z-index: 0;
+}
+html {
+	box-sizing: border-box;
+	font-size: calc(var(--font-body-scale) * 62.5%);
+	height: 100%;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+body ::-webkit-scrollbar {
+	height: 0;
+	width: 0;
+}
+::-webkit-scrollbar-thumb {
+	background: none;
+}
+::-webkit-scrollbar-track {
+	background-color: inherit;
+}
+::selection {
+	background-color: rgba(var(--color-foreground),.2);
+}
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path>
+<svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+<summary role="button" aria-expanded="false" aria-controls="ProductAccordion-collapsible-row-0-template--22808431493422__main">
+                      <div class="summary__title">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M18.6307 0.0851008C18.9214 0.143319 19.2573 0.251631 19.499 0.483071C19.7487 0.722288 19.8616 1.06444 19.9202 1.35568C19.9821 1.66275 20.0008 2.00418 20 2.32523C19.9986 2.89096 19.9355 3.45932 19.9011 3.76888C19.8965 3.81064 19.8924 3.8477 19.889 3.8794L19.8885 3.88469C19.7574 5.00604 19.5546 6.53586 19.2559 8.16345C18.9577 9.77538 18.5618 11.5447 18.0423 13.1175L18.0415 13.1198C17.54 14.6143 16.835 16.2292 15.7876 17.2779C12.1807 20.8897 6.31722 20.917 2.70668 17.3017C-0.903844 13.6864 -0.876728 7.8151 2.73025 4.20335C3.77726 3.15495 5.37751 2.44898 6.88416 1.94609L6.88527 1.94573C8.4557 1.42559 10.21 1.02928 11.8328 0.73059C13.4582 0.431407 14.986 0.228254 16.1059 0.097027L16.1111 0.0964089C16.1231 0.0951308 16.1358 0.0937998 16.1492 0.09237C16.4416 0.0610531 17.0517 -0.0042707 17.6652 0.000220251C17.9855 0.00256445 18.3248 0.0238389 18.6307 0.0851008ZM16.2207 1.10269C15.114 1.23241 13.6107 1.4325 12.0155 1.72612C10.4166 2.02043 8.71247 2.40674 7.20334 2.90653C5.72522 3.39993 4.31684 4.04614 3.44505 4.91909C0.229287 8.13911 0.209266 13.3695 3.42148 16.5859C6.63368 19.8024 11.8571 19.7822 15.0728 16.5622C15.9442 15.6897 16.5895 14.2687 17.0829 12.7984C17.5818 11.2879 17.9676 9.5703 18.2616 7.98044C18.5549 6.38318 18.7546 4.8779 18.8841 3.76969C18.8878 3.73473 18.8921 3.69563 18.8969 3.65288C18.9315 3.33899 18.9879 2.82875 18.9891 2.32275C18.9898 2.03445 18.9722 1.76875 18.9293 1.5558C18.8832 1.32703 18.8229 1.23626 18.8002 1.21454C18.7694 1.18504 18.6656 1.12434 18.4325 1.07766C18.2146 1.03402 17.9461 1.01452 17.6578 1.01241C17.1035 1.00835 16.5429 1.06826 16.2505 1.09951C16.2402 1.10061 16.2303 1.10167 16.2207 1.10269Z"></path>
+      <path d="M19.4297 0.501734C19.6261 0.7004 19.6244 1.02084 19.426 1.21747L0.860985 19.6161C0.662582 19.8127 0.342561 19.811 0.146198 19.6124C-0.0501654 19.4137 -0.0485124 19.0933 0.14989 18.8966L18.7149 0.498038C18.9133 0.301414 19.2334 0.303069 19.4297 0.501734Z"></path>
+      <path d="M5.62257 2.4772H6.12801V13.6663H17.3961V14.1724H5.62257V2.4772Z"></path>
+      <path d="M10.1879 1.18752H10.6933L10.6933 9.14731H18.7842V9.65342H10.1879L10.1879 1.18752Z"></path></svg>
+                        <h2 class="h4 accordion__title inline-richtext">
+                          Materials and care
+                        </h2>
+                      </div>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+%}{% endstyle %}

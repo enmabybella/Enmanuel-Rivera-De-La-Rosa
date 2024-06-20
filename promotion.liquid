@@ -1,0 +1,416 @@
+{{ 'promotion.css' | asset_url | stylesheet_tag }}
+
+<div id="{{ section.id }}" class="promotion-section section">
+  <div class="page-width {% if section.settings.full_width %} page-width--full{% endif %}">
+    <div class="layout-flex-grid layout-flex-grid--gutters layout-flex-grid--{{ section.id }}">
+      {% for block in section.blocks limit: collection_limit %}
+        {% if collection_page %}
+          {% if block.settings.promo_collection != blank %}
+            {% if block.settings.promo_collection != collection.handle %}
+              {% continue %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        {% style %}
+          .promotion-section h2,
+          .promotion-section p {
+              color: {{block.settings.color_text}};
+          }
+          {% if block.settings.height %}
+          {% unless block.settings.boxed %}
+              .layout-flex-grid__item--{{ block.id }} {
+              min-height: {{ block.settings.height | times: 0.6 }}px;
+              }
+          {% endunless %}
+
+          @media only screen and (min-width: 769px) {
+              .layout-flex-grid__item--{{ block.id }} {
+              min-height: {{ block.settings.height | times: 0.8 }}px;
+              }
+          }
+          @media only screen and (min-width: 1140px) {
+              .layout-flex-grid__item--{{ block.id }} {
+              min-height: {{ block.settings.height }}px;
+              }
+          }
+          {% endif %}
+          #{{ section.id }} #block--{{ block.id }} .sub-title,
+          #{{ section.id }} #block--{{ block.id }} .title,
+          #{{ section.id }} #block--{{ block.id }} .text p {
+            color: {{ block.settings.color_text }}
+          }
+        {% endstyle %}
+
+        <div
+          class="layout-flex-grid__item layout-flex-grid__item--{{ block.settings.width }} layout-flex-grid__item--{{ block.id }} type-{{ block.type }}"
+          {{ block.shopify_attributes }}
+        >
+          {% case block.type %}
+            {% when 'advanced' %}
+              <div
+                id="block--{{ block.id }}"
+                class="promotion-section__container{% if block.settings.boxed %} promotion-section__container--boxed{% endif %}{% if block.settings.framed %} promotion-section__container--framed{% endif %} {{ block.settings.text_align }}"
+              >
+                {% if block.settings.cta_link1 != blank and block.settings.cta_link2 == blank %}
+                  <a href="{{ block.settings.cta_link1 }}" class="promotion-section__slide-link"></a>
+                {% endif %}
+
+                <div class="promotion-section__bg">
+                  {% if block.settings.image != blank %}
+                    {% style %}
+                      .promotion-section__bg-image--{{ block.id }} {
+                        object-position: {{ block.settings.focal_point }};
+                        font-family: "object-fit: cover; object-position: {{ block.settings.focal_point }};";
+                      }
+                    {% endstyle %}
+
+                    {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                    <img
+                      class="image-fit promotion-section__bg-image promotion-section__bg-image--{{ block.id }} lazyload data-aos data-aos--fade-in"
+                      src="{{ block.settings.image | img_url: 'master' }}"
+                      srcset="
+                        {%- if block.settings.image.width >= 200 -%}{{ block.settings.image | img_url: '200x' }} 200w,{%- endif -%}
+                        {%- if block.settings.image.width >= 320 -%}{{ block.settings.image | img_url: '320x' }} 320w,{%- endif -%}
+                        {%- if block.settings.image.width >= 480 -%}{{ block.settings.image | img_url: '480x' }} 480w,{%- endif -%}
+                        {%- if block.settings.image.width >= 768 -%}{{ block.settings.image | img_url: '768x' }} 768w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1024 -%}{{ block.settings.image | img_url: '1024x' }} 1024w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1400 -%}{{ block.settings.image | img_url: '1400x' }} 1400w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1920 -%}{{ block.settings.image | img_url: '1920x' }} 1920w{%- endif -%}
+                      "
+                      sizes="(min-width: 1100px){% if section.blocks.size > 1 %}700px{% else %}940px{% endif %}, (min-width: 750px) {% if section.blocks.size > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %}, calc(100vw - 3rem)"
+                      height="{{ block.settings.image.height }}"
+                      width="{{ block.settings.image.width }}"
+                      loading="lazy"
+                      data-src="{{ img_url }}"
+                      data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                      data-sizes="auto"
+                      data-parent-fit="cover"
+                      style="object-position:{{block.settings.image.presentation.focal_point}}"
+                      alt="{{ block.settings.image.alt | escape }}"
+                    >
+                    <noscript>
+                      <img
+                        class="image-fit promotion-section__bg-image promotion-section__bg-image--{{ block.id }} lazyloaded"
+                        src="{{ block.settings.image | img_url: '1800x' }}"
+                        loading="lazy"
+                        style="object-position:{{block.settings.image.presentation.focal_point}}"
+                        alt="{{ block.settings.image.alt }}"
+                      >
+                    </noscript>
+                  {% else %}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {% endif %}
+                </div>
+
+                {% if block.settings.tagline != blank
+                  or block.settings.heading != blank
+                  or block.settings.textarea != blank
+                  or block.settings.cta_text1 != blank
+                  or block.settings.cta_text2 != blank
+                %}
+                  <div class="promotion-section__content{% if block.settings.boxed %} color-{{block.settings.color_bg}}{% endif %} {% if block.settings.box_opacity%} box-opacity{% endif %} {% if block.settings.framed %} promotion-section__content--framed{% endif %}">
+                    <div class="promotion-section__text">
+                      {% if block.settings.tagline != blank %}
+                        <div class="rte--block rte--em">
+                          <p class="mb-3 sub-title data-aos data-aos--fade-in">{{ block.settings.tagline }}</p>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.heading != blank %}
+                        <h2 class="title data-aos data-aos--fade-in">
+                          {{ block.settings.heading }}
+                        </h2>
+                      {% endif %}
+                      {% if block.settings.text != blank %}
+                        <div class="text rte--block data-aos data-aos--fade-in rte">
+                          {{ block.settings.text | newline_to_br }}
+                        </div>
+                      {% endif %}
+
+                      {% if block.settings.cta_text1 != blank or block.settings.cta_text2 != blank %}
+                        <div class="mt-4 data-aos data-aos--fade-in">
+                          {% if block.settings.cta_text1 != blank %}
+                            <a href="{{ block.settings.cta_link1 }}" class="button button--primary">
+                              {{ block.settings.cta_text1 }}
+                            </a>
+                          {% endif %}
+                          {% if block.settings.cta_text2 != blank %}
+                            <a href="{{ block.settings.cta_link2 }}" class="button button--primary">
+                              {{ block.settings.cta_text2 }}
+                            </a>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+          {% endcase %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.promotion.settings.full_width.label",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.promotion.presets.name",
+      "category": "Promotional",
+      "blocks": [
+        {
+          "type": "advanced",
+          "settings": {
+            "width": "50"
+          }
+        },
+        {
+          "type": "advanced",
+          "settings": {
+            "width": "50"
+          }
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "advanced",
+      "name": "t:sections.promotion.blocks.advanced.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.promotion.blocks.advanced.settings.image.label",
+          "info": "1280 x 1080px .jpeg recommended"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "t:sections.promotion.blocks.advanced.settings.tagline.label",
+          "default": "Limited time",
+          "info": "5 words max recommended"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.promotion.blocks.advanced.settings.heading.label",
+          "default": "Announce your promotion",
+          "info": "8 words max recommended"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.promotion.blocks.advanced.settings.text.label",
+          "default": "<p>Include the smaller details of your promotion in text below the title.</p>",
+          "info": "16 words max recommended"
+        },
+        {
+          "type": "text",
+          "id": "cta_text1",
+          "label": "t:sections.promotion.blocks.advanced.settings.cta_text1.label",
+          "default": "Shop This"
+        },
+        {
+          "type": "url",
+          "id": "cta_link1",
+          "label": "t:sections.promotion.blocks.advanced.settings.cta_link1.label"
+        },
+        {
+          "type": "text",
+          "id": "cta_text2",
+          "label": "t:sections.promotion.blocks.advanced.settings.cta_text2.label",
+          "default": "Shop All"
+        },
+        {
+          "type": "url",
+          "id": "cta_link2",
+          "label": "t:sections.promotion.blocks.advanced.settings.cta_link2.label"
+        },
+
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:sections.promotion.blocks.advanced.settings.width.label",
+          "default": "100",
+          "options": [
+            {
+              "value": "50",
+              "label": "t:sections.promotion.blocks.advanced.settings.width.options__1.label"
+            },
+            {
+              "value": "100",
+              "label": "t:sections.promotion.blocks.advanced.settings.width.options__2.label"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "height",
+          "label": "t:sections.promotion.blocks.advanced.settings.height.label",
+          "default": 500,
+          "min": 100,
+          "max": 800,
+          "step": 20,
+          "unit": "px"
+        },
+        {
+          "type": "header",
+          "content": "Alignment"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "t:sections.promotion.blocks.advanced.settings.text_align.label",
+          "default": "vertical-center horizontal-center",
+          "options": [
+            {
+              "value": "vertical-top horizontal-left",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__1.label"
+            },
+            {
+              "value": "vertical-top horizontal-center",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__2.label"
+            },
+            {
+              "value": "vertical-top horizontal-right",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__3.label"
+            },
+            {
+              "value": "vertical-center horizontal-left",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__4.label"
+            },
+            {
+              "value": "vertical-center horizontal-center",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__5.label"
+            },
+            {
+              "value": "vertical-center horizontal-right",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__6.label"
+            },
+            {
+              "value": "vertical-bottom horizontal-left",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__7.label"
+            },
+            {
+              "value": "vertical-bottom horizontal-center",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__8.label"
+            },
+            {
+              "value": "vertical-bottom horizontal-right",
+              "label": "t:sections.promotion.blocks.advanced.settings.text_align.options__9.label"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "focal_point",
+          "label": "t:sections.promotion.blocks.advanced.settings.focal_point.label",
+          "default": "center",
+          "options": [
+            {
+              "value": "20% 0",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__1.label"
+            },
+            {
+              "value": "top",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__2.label"
+            },
+            {
+              "value": "80% 0",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__3.label"
+            },
+            {
+              "value": "20% 50%",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__4.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__5.label"
+            },
+            {
+              "value": "80% 50%",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__6.label"
+            },
+            {
+              "value": "20% 100%",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__7.label"
+            },
+            {
+              "value": "bottom",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__8.label"
+            },
+            {
+              "value": "80% 100%",
+              "label": "t:sections.promotion.blocks.advanced.settings.focal_point.options__9.label"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Design"
+        },
+        {
+          "type": "checkbox",
+          "id": "boxed",
+          "label": "Add box",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "color_bg",
+          "options": [
+            {
+              "value": "accent-1",
+              "label": "t:sections.promotion.blocks.advanced.settings.color_bg.options__1.label"
+            },
+            {
+              "value": "accent-2",
+              "label": "t:sections.promotion.blocks.advanced.settings.color_bg.options__2.label"
+            },
+            {
+              "value": "background-1",
+              "label": "t:sections.promotion.blocks.advanced.settings.color_bg.options__3.label"
+            },
+            {
+              "value": "background-2",
+              "label": "t:sections.promotion.blocks.advanced.settings.color_bg.options__4.label"
+            }
+          ],
+          "default": "background-1",
+          "label": "t:sections.promotion.blocks.advanced.settings.color_bg.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "box_opacity",
+          "default": false,
+          "label": "t:sections.promotion.blocks.advanced.settings.box_opacity.label"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "t:sections.promotion.blocks.advanced.settings.color_text.label",
+          "default": "#000"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

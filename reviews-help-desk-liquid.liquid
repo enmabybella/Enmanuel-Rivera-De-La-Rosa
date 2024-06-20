@@ -1,0 +1,242 @@
+{{ 'section-reviews.css' | asset_url | stylesheet_tag }}
+{{ 'reviews-help-desk.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .reviews-wrapper h2 {
+    color: {{section.settings.color_text}};
+  }
+  .reviews-slider .flickity-button-icon {
+    fill: {{section.settings.color_text}};
+  }
+  .reviews-slider .flickity-page-dots .dot{
+    background: {{section.settings.dots_color}};
+  }
+  .reviews__text p, .reviews__author{
+    color:{{ section.settings.color_text }};
+  }
+</style>
+
+<div
+  class="help-desk_reviews reviewsSlider-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="reviews-section"
+>
+  <div class="slider-wrapper data-aos data-aos--fade-up data-aos--delay-200">
+    <div class="reviews-wrapper section color-{{ section.settings.bg_color }}">
+      <div class="page-width">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="" style="color:{{ section.settings.color_title }};">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </div>
+      <div class="page-width">
+        <div
+          class="slideshow__slide_container reviews-slider"
+          id="ReviewsSlider-{{ section.id }}"
+          data-natural="true"
+          data-autoplay="{{ section.settings.slide_autoplay }}"
+          data-speed="{{ section.settings.autoplay_time | times: 1000 }}"
+          {% if section.settings.navigation_style == 'arrows' %}
+            data-arrows="true"
+          {% endif %}
+          {% if section.settings.navigation_style == 'dots' %}
+            data-dots="true"
+          {% endif %}
+          data-count="{{ section.blocks.size }}"
+        >
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'review' -%}
+                <div class="slideshow__slide  {% if forloop.index0 < 3 %}show_on_load{% endif %}  reviews__slide review-slide--{{ block.id }}">
+                  <div class="has-text-centered reviews__content data-aos data-aos--fade-in">
+                    {% unless block.settings.review__text == blank %}
+                      <div class="reviews__text rte" style="color:{{ section.settings.color_text }}">
+                        {{ block.settings.review__text }}
+                      </div>
+                    {% endunless %}
+                    {% unless block.settings.review__author == blank %}
+                      <div class="author-img">
+                        {%- if block.settings.image != blank -%}
+                          <img
+                            src="{{ block.settings.image | img_url: 'master' }}"
+                            srcset="
+                              {%- if block.settings.image.width >= 200 -%}{{ block.settings.image | img_url: '200x' }} 200w,{%- endif -%}
+                              {%- if block.settings.image.width >= 320 -%}{{ block.settings.image | img_url: '320x' }} 320w,{%- endif -%}
+                              {%- if block.settings.image.width >= 480 -%}{{ block.settings.image | img_url: '480x' }} 480w,{%- endif -%}
+                              {%- if block.settings.image.width >= 768 -%}{{ block.settings.image | img_url: '768x' }} 768w,{%- endif -%}
+                              {%- if block.settings.image.width >= 1024 -%}{{ block.settings.image | img_url: '1024x' }} 1024w,{%- endif -%}
+                              {%- if block.settings.image.width >= 1400 -%}{{ block.settings.image | img_url: '1400x' }} 1400w{%- endif -%}
+                            "
+                            width="{{ block.settings.image.width }}"
+                            height="{{ block.settings.image.height }}"
+                            alt="{{ block.settings.image.alt | escape }}"
+                            loading="lazy"
+                            style="object-position:{{block.settings.image.presentation.focal_point}}"
+                            class=""
+                          >
+                        {%- else -%}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:svgjs="http://svgjs.com/svgjs"
+                            width="100"
+                            height="100"
+                            x="0"
+                            y="0"
+                            viewBox="0 0 64 64"
+                            xml:space="preserve"
+                            class=""
+                          >
+                            <g><g xmlns="http://www.w3.org/2000/svg" id="User"><path d="m32 1a31 31 0 1 0 31 31 31.0351 31.0351 0 0 0 -31-31zm0 60a29 29 0 1 1 29-29 29.0331 29.0331 0 0 1 -29 29z" fill="#a5a5a5" data-original="#000000" class=""></path><path d="m53.5874 46.7529a30.9971 30.9971 0 0 0 -43.1748 0 1 1 0 0 0 1.3945 1.4336 28.9973 28.9973 0 0 1 40.3858 0 1 1 0 0 0 1.3945-1.4336z" fill="#a5a5a5" data-original="#000000" class=""></path><path d="m32 34a12 12 0 1 0 -12-12 12.0134 12.0134 0 0 0 12 12zm0-22a10 10 0 1 1 -10 10 10.0114 10.0114 0 0 1 10-10z" fill="#a5a5a5" data-original="#000000" class=""></path></g></g>
+                          </svg>
+                        {%- endif -%}
+                        <p class="reviews__author has-text-weight-bold data-aos data-aos--fade-in">
+                          {{ block.settings.review__author | escape }}
+                        </p>
+                      </div>
+                    {% endunless %}
+                  </div>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+        <div class="has-text-centered button-wrapper">
+          {%- if section.settings.view_all and section.settings.view_all_link != blank -%}
+            <a href="{{ section.settings.view_all_link }}" class="button button--primary">
+              {{- 'sections.reviews.view_all' | t -}}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "navigation_style",
+      "label": "t:sections.reviews-help-desk.settings.navigation_style.label",
+      "default": "dots",
+      "options": [
+        {
+          "label": "t:sections.reviews-help-desk.settings.navigation_style.options__1.label",
+          "value": "arrows"
+        },
+        {
+          "label": "t:sections.reviews-help-desk.settings.navigation_style.options__2.label",
+          "value": "dots"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_autoplay",
+      "default": false,
+      "label": "t:sections.reviews-help-desk.settings.slide_autoplay.label"
+    },
+    {
+      "type": "color",
+      "id": "dots_color",
+      "default": "#000",
+      "label": "t:sections.reviews-help-desk.settings.dots_color.label"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_time",
+      "min": 5,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "unit": "s",
+      "label": "t:sections.reviews-help-desk.settings.autoplay_time.label"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "default": "#000",
+      "label": "Heading color"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "default": "#000",
+      "label": "t:sections.reviews-help-desk.settings.color_text.label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Reviews",
+      "label": "t:sections.reviews-help-desk.settings.heading.label",
+      "info": "5 words max recommended"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.reviews-help-desk.settings.bg_color.options__1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.reviews-help-desk.settings.bg_color.options__2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.reviews-help-desk.settings.bg_color.options__3.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.reviews-help-desk.settings.bg_color.options__4.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.reviews-help-desk.settings.bg_color.label"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "view_all",
+      "default": false,
+      "label": "t:sections.reviews-help-desk.settings.view_all.label"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "t:sections.reviews-help-desk.settings.view_all_link.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "t:sections.reviews-help-desk.blocks.column.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "review__text",
+          "label": "t:sections.reviews-help-desk.blocks.column.settings.review__text.label",
+          "default": "<p>Add</p>",
+          "info": "12 words max recommended"
+        },
+        {
+          "type": "text",
+          "id": "review__author",
+          "label": "t:sections.reviews-help-desk.blocks.column.settings.review__author.label",
+          "default": "-Author name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.reviews-help-desk.blocks.column.settings.image.label",
+          "info": "512 x 512px .jpeg.png.svg recommended"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

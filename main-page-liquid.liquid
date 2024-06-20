@@ -1,0 +1,20 @@
+
+<link rel="stylesheet" href="{{ 'section-main-page.css.js' | asset_url }}" media="print" onload="this.media=all">
+<noscript>{{ 'section-main-page.css.js' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="content-main-page">
+  <div class="page-width {% if section.settings.page_large %}page-width-large {% endif %}">
+    <h1 class="h1 has-text-centered">
+      {{ page.title | escape }}
+    </h1>
+    <div class="main-page">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "section main-page",
+    "settings": []
+  }
+{% endschema %}

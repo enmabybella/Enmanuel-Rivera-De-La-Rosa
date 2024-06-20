@@ -1,0 +1,159 @@
+{{ 'section-product-description-tabs.css' | asset_url | stylesheet_tag }}
+
+<style>
+  #{{ section.id }}.section-style-style_2 .tabs {
+    background-color: {{ section.settings.tab_bg }};
+  }
+  #{{ section.id }}.section-style-style_2 .tab.active {
+    background-color: {{ section.settings.active_tab_bg }};
+  }
+</style>
+
+<div
+  id="{{ section.id }}"
+  class="product-description-tabs-section section section-style-{{section.settings.tab_style}}"
+>
+  <div class="tabs">
+    {% for block in section.blocks %}
+      <h4 class="tab {% if forloop.first %}active{% endif %}">
+        {%- if block.type == '@app' -%}
+          Reviews
+        {%- else -%}
+          {{ block.settings.title }}
+        {%- endif -%}
+      </h4>
+    {% endfor %}
+  </div>
+  <div class="tab-content-wrapper">
+    {% for block in section.blocks %}
+      {% assign first_block = forloop.first %}
+      {% case block.type %}
+        {% when 'description' %}
+          <div class="product-description tab-content {% if forloop.first %}active{% endif %}">
+            {{ product.description }}
+          </div>
+
+        {% when 'content' %}
+          <div class="additional-content tab-content {% if forloop.first %}active{% endif %} rte">
+            {{ block.settings.text }}
+          </div>
+
+        {% when '@app' %}
+          <div
+            id="shopify-product-reviews tab-content {% if forloop.first %}active{% endif %}"
+            data-id="{{product.id}}"
+          >
+            {{ product.metafields.spr.reviews }}
+            {% render block %}
+          </div>
+
+        {% when 'custom-liquid' %}
+          <div class="custom-liquid tab-content {% if forloop.first %}active{% endif %}">
+            {{ block.settings['custom-liquid'] }}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+<script src="{{ 'tab-selection.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Section name",
+  "presets": [
+    {
+      "name": "t:sections.product-description-tabs.name"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "tab_style",
+      "label": "t:sections.product-description-tabs.settings.tab_style.label",
+      "options": [
+        {
+          "value": "style_1",
+          "label": "t:sections.product-description-tabs.settings.tab_style.options__1.label"
+        },
+        {
+          "value": "style_2",
+          "label": "t:sections.product-description-tabs.settings.tab_style.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.product-description-tabs.settings.style_2_options.label"
+    },
+    {
+      "type": "color",
+      "id": "tab_bg",
+      "label": "t:sections.product-description-tabs.settings.tab_bg.label",
+      "default": "#F1F2F4"
+    },
+    {
+      "type": "color",
+      "id": "active_tab_bg",
+      "label": "t:sections.product-description-tabs.settings.active_tab_bg.label",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "t:sections.product-description-tabs.blocks.description.name",
+      "type": "description",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.product-description-tabs.blocks.description.settings.paragraph__1.content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.product-description-tabs.blocks.description.settings.title.label",
+          "default": "Description"
+        }
+      ]
+    },
+    {
+      "name": "t:sections.product-description-tabs.blocks.content.name",
+      "type": "content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.product-description-tabs.blocks.content.settings.title.label",
+          "default": "Additional Info"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Content",
+          "default": "<p>Use this section to provide additional information about your product. Include details such as product specifications, dimensions, materials, usage instructions, and any other relevant information that can help customers make informed purchasing decisions. Ensure clarity and accuracy in conveying these details to enhance the customer's understanding of the product.</p>"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "name": "t:sections.product-description-tabs.blocks.custom-liquid.settings.custom-liquid.label",
+      "type": "custom-liquid",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.product-description-tabs.blocks.custom-liquid.settings.title.label"
+        },
+        {
+          "type": "liquid",
+          "id": "custom-liquid",
+          "label": "t:sections.product-description-tabs.blocks.custom-liquid.settings.custom-liquid.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
