@@ -1,0 +1,128 @@
+[
+  {
+    "name": "policies/akajj264aofizjehbu",
+    "displayName": "[Default] Users in my organization can share and receive within the organization",
+    "description": "Users in my organization can share and receive items with others in the organization",
+    "targets": {
+      "includedEntity": [
+        {
+          "ouId": "03ph8a2z0ym7tlp"
+        }
+      ]
+    },
+    "updateTime": "2023-05-13T08:18:14.355618Z",
+    "trigger": [
+      "DRIVE_SHARE_TRUST",
+      "DRIVE_RECEIVE_TRUST"
+    ],
+    "condition": {
+      "baseCondition": {
+        "matchSource": "ORGANIZATION_TRUST_TARGET",
+        "matcher": {
+          "customerMatcher": {
+            "customerId": "00sbul92"
+          }
+        }
+      }
+    },
+    "action": [
+      {
+        "actionName": "ALLOW_SHARE",
+        "actionId": "",
+        "genericApplicationId": {
+          "googleApplication": "drive"
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "createTime": "1970-01-01T00:00:00Z",
+    "ruleType": "TRUST",
+    "createdBy": {
+      "email": "",
+      "userName": "users/101738763365973924625"
+    },
+    "applicationIds": [
+      {
+        "googleApplication": "drive"
+      }
+    ]
+  },
+  {
+    "name": "policies/akajj264apb2nthdee",
+    "displayName": "[Default] Users in my organization can share with a warning and receive from anyone",
+    "description": "Users in my organization can share with a warning and receive items from anyone",
+    "targets": {
+      "includedEntity": [
+        {
+          "ouId": "03ph8a2z0ym7tlp"
+        }
+      ]
+    },
+    "updateTime": "2023-05-13T08:18:14.355618Z",
+    "trigger": [
+      "DRIVE_SHARE_TRUST",
+      "DRIVE_RECEIVE_TRUST"
+    ],
+    "condition": {
+      "orCondition": {
+        "condition": [
+          {
+            "baseCondition": {
+              "matchSource": "ANYONE_TRUST_TARGET",
+              "matcher": {
+                "emailAddressMatcher": {
+                  "emailAddressListId": ""
+                }
+              }
+            }
+          },
+          {
+            "baseCondition": {
+              "matchSource": "ANYONE_TRUST_TARGET",
+              "matcher": {
+                "emailAddressMatcher": {
+                  "emailAddressListId": ""
+                }
+              }
+            }
+          },
+          {
+            "notCondition": {
+              "condition": {
+                "baseCondition": {
+                  "matchSource": "ANYONE_TRUST_TARGET",
+                  "matcher": {
+                    "emailAddressMatcher": {
+                      "emailAddressListId": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "action": [
+      {
+        "actionName": "ALLOW_SHARE_WITH_WARNING",
+        "actionId": "",
+        "genericApplicationId": {
+          "googleApplication": "drive"
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "createTime": "1970-01-01T00:00:00Z",
+    "ruleType": "TRUST",
+    "createdBy": {
+      "email": "",
+      "userName": "users/101738763365973924625"
+    },
+    "applicationIds": [
+      {
+        "googleApplication": "drive"
+      }
+    ]
+  }
+]
